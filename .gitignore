@@ -26,6 +26,22 @@ xcuserdata/
 *.ipa
 *.dSYM.zip
 *.dSYM
+*.o
+*.lo
+*.la
+*.al
+.libs
+*.so
+*.so.[0-9]*
+*.pyc
+*.pyo
+__pycache__
+*.rej
+*~
+#*#
+.#*
+.*.swp
+.DS_Store
 
 # CocoaPods
 #
