@@ -8,6 +8,8 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
+
 
 class LDNetworkManager: NSObject {
     
@@ -50,13 +52,18 @@ extension LDNetworkManager {
         
         Alamofire.request(.POST,urlString,parameters: params).responseJSON
             {response in
-                switch response.result {
-                case.Success:
-                    if let value = response.result.value as? [String : AnyObject] {
-                        success(responseObject: value)
-                    }
-                case .Failure(let error):
-                    failture(error: error)
+                
+                let result = response.result
+                
+                guard result.isSuccess else {
+                    
+                    failture(error: response.result.error!)
+                    
+                    return
+                }
+                
+                if let value = result.value as? [String : AnyObject] {
+                    success(responseObject: value)
                 }
         }
     }
@@ -66,13 +73,18 @@ extension LDNetworkManager {
         
         Alamofire.request(.GET,urlString,parameters: params).responseJSON
             {response in
-                switch response.result {
-                case.Success:
-                    if let value = response.result.value as? [String : AnyObject] {
-                        success(responseObject: value)
-                    }
-                case .Failure(let error):
-                    failture(error: error)
+                
+                let result = response.result
+                
+                guard result.isSuccess else {
+                    
+                    failture(error: response.result.error!)
+                    
+                    return
+                }
+                
+                if let value = result.value as? [String : AnyObject] {
+                    success(responseObject: value)
                 }
         }
     }
