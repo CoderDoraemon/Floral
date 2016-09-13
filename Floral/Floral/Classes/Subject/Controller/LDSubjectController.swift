@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 private let LDSubjectCellIdentifier = "LDSubjectCellIdentifier"
 
@@ -14,7 +15,8 @@ class LDSubjectController: UIViewController {
     
     var currentPageIndex : NSInteger = 0
     
-
+    var dataArray : [LDSubjectModel]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -63,12 +65,14 @@ extension LDSubjectController {
         
         LDNetworkManager.sharedNetworkManager.post(urlString, params: params, success: { (responseObject) in
             
+            let status = responseObject["status"]?.integerValue
             
-            print("=======\(responseObject)")
+            guard status == 1 else {
+                return
+            }
             
             
-            
-            
+//            let resultArray = responseObject["result"]
             
             }) { (error) in
                 

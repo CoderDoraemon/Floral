@@ -10,6 +10,11 @@ import UIKit
 
 class LDCategoryModel: NSObject {
 
+    var createDate : String?
+    var enName : String?
+    var img : String?
+    var name : String?
+    
     
     init(dict: [String: AnyObject]) {
         super.init()

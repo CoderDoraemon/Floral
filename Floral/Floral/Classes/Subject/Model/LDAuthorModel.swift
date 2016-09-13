@@ -9,6 +9,14 @@
 import UIKit
 
 class LDAuthorModel: NSObject {
+    
+    var auth : String?
+    var content : String?
+    var headImg : String?
+    var identity : String?
+    var integral : NSInteger = 0
+    var userName : String?
+    
 
     init(dict: [String: AnyObject]) {
         super.init()
