@@ -8,8 +8,6 @@
 
 import UIKit
 import Alamofire
-import Alamofire_SwiftyJSON
-
 
 class LDNetworkManager: NSObject {
     
@@ -70,8 +68,6 @@ extension LDNetworkManager {
     
     /// 发送GET请求
     func getRequest(urlString : String, params : [String : AnyObject], success : (responseObject : [String : AnyObject])->(), failture : (error : NSError)->()) {
-        
-        
         
         Alamofire.request(.GET,urlString,parameters: params).responseJSON
             {response in

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1832D1961D87F49100416295 /* LDSubjectBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1832D1951D87F49100416295 /* LDSubjectBottomView.swift */; };
+		1832D1981D87F63100416295 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1832D1971D87F63100416295 /* UIButton+Extension.swift */; };
+		1832D1A41D88084800416295 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1832D19D1D88084800416295 /* UITableView+FDIndexPathHeightCache.m */; };
+		1832D1A51D88084800416295 /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1832D19F1D88084800416295 /* UITableView+FDKeyedHeightCache.m */; };
+		1832D1A61D88084800416295 /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1832D1A11D88084800416295 /* UITableView+FDTemplateLayoutCell.m */; };
+		1832D1A71D88084800416295 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 1832D1A31D88084800416295 /* UITableView+FDTemplateLayoutCellDebug.m */; };
 		1850665E1D7FE80600393706 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850665D1D7FE80600393706 /* AppDelegate.swift */; };
 		185066601D7FE80600393706 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850665F1D7FE80600393706 /* ViewController.swift */; };
 		185066631D7FE80600393706 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185066611D7FE80600393706 /* Main.storyboard */; };
@@ -144,6 +150,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1832D1951D87F49100416295 /* LDSubjectBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSubjectBottomView.swift; sourceTree = "<group>"; };
+		1832D1971D87F63100416295 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		1832D19B1D88084800416295 /* Floral-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Floral-Bridging-Header.h"; sourceTree = "<group>"; };
+		1832D19C1D88084800416295 /* UITableView+FDIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDIndexPathHeightCache.h"; sourceTree = "<group>"; };
+		1832D19D1D88084800416295 /* UITableView+FDIndexPathHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDIndexPathHeightCache.m"; sourceTree = "<group>"; };
+		1832D19E1D88084800416295 /* UITableView+FDKeyedHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDKeyedHeightCache.h"; sourceTree = "<group>"; };
+		1832D19F1D88084800416295 /* UITableView+FDKeyedHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDKeyedHeightCache.m"; sourceTree = "<group>"; };
+		1832D1A01D88084800416295 /* UITableView+FDTemplateLayoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCell.h"; sourceTree = "<group>"; };
+		1832D1A11D88084800416295 /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
+		1832D1A21D88084800416295 /* UITableView+FDTemplateLayoutCellDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCellDebug.h"; sourceTree = "<group>"; };
+		1832D1A31D88084800416295 /* UITableView+FDTemplateLayoutCellDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCellDebug.m"; sourceTree = "<group>"; };
 		1850665A1D7FE80600393706 /* Floral.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Floral.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1850665D1D7FE80600393706 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1850665F1D7FE80600393706 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -297,6 +314,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1832D1991D8807F200416295 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				1832D19A1D88083C00416295 /* TableView+AutoLayout */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		1832D19A1D88083C00416295 /* TableView+AutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				1832D19C1D88084800416295 /* UITableView+FDIndexPathHeightCache.h */,
+				1832D19D1D88084800416295 /* UITableView+FDIndexPathHeightCache.m */,
+				1832D19E1D88084800416295 /* UITableView+FDKeyedHeightCache.h */,
+				1832D19F1D88084800416295 /* UITableView+FDKeyedHeightCache.m */,
+				1832D1A01D88084800416295 /* UITableView+FDTemplateLayoutCell.h */,
+				1832D1A11D88084800416295 /* UITableView+FDTemplateLayoutCell.m */,
+				1832D1A21D88084800416295 /* UITableView+FDTemplateLayoutCellDebug.h */,
+				1832D1A31D88084800416295 /* UITableView+FDTemplateLayoutCellDebug.m */,
+				1832D19B1D88084800416295 /* Floral-Bridging-Header.h */,
+			);
+			path = "TableView+AutoLayout";
+			sourceTree = "<group>";
+		};
 		185066511D7FE80600393706 = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +506,7 @@
 		1850669B1D7FE9F200393706 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				1832D1991D8807F200416295 /* Lib */,
 				1850669C1D7FE9F200393706 /* Category */,
 				1850669D1D7FE9F200393706 /* Resources */,
 				185067001D7FE9F200393706 /* Tools */,
@@ -476,6 +518,7 @@
 			isa = PBXGroup;
 			children = (
 				18CEB9FD1D7FF20C003A8080 /* UIImage+Extension.swift */,
+				1832D1971D87F63100416295 /* UIButton+Extension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -603,6 +646,7 @@
 			children = (
 				18CEBA011D800888003A8080 /* LDTitleScrollView.swift */,
 				18A0188A1D83B0D600BC807A /* LDSubjectCell.swift */,
+				1832D1951D87F49100416295 /* LDSubjectBottomView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1023,17 +1067,23 @@
 				185066601D7FE80600393706 /* ViewController.swift in Sources */,
 				1850665E1D7FE80600393706 /* AppDelegate.swift in Sources */,
 				1850676E1D7FEB1300393706 /* LDCommunityController.swift in Sources */,
+				1832D1A41D88084800416295 /* UITableView+FDIndexPathHeightCache.m in Sources */,
 				185067701D7FEB2400393706 /* LDStoreController.swift in Sources */,
+				1832D1981D87F63100416295 /* UIButton+Extension.swift in Sources */,
 				18A018901D83E22900BC807A /* LDAuthorModel.swift in Sources */,
 				185067721D7FEB3500393706 /* LDSubjectController.swift in Sources */,
 				185066661D7FE80600393706 /* Floral.xcdatamodeld in Sources */,
 				1850676C1D7FEAFE00393706 /* LDMeController.swift in Sources */,
 				18CEB9FE1D7FF20C003A8080 /* UIImage+Extension.swift in Sources */,
 				18CEBA001D7FF7A3003A8080 /* LDNetworkManager.swift in Sources */,
+				1832D1A51D88084800416295 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				185067681D7FEABE00393706 /* LDTabBarController.swift in Sources */,
 				18CEBA021D800888003A8080 /* LDTitleScrollView.swift in Sources */,
 				18A0188B1D83B0D600BC807A /* LDSubjectCell.swift in Sources */,
 				18A0188E1D83E16C00BC807A /* LDSubjectModel.swift in Sources */,
+				1832D1A61D88084800416295 /* UITableView+FDTemplateLayoutCell.m in Sources */,
+				1832D1961D87F49100416295 /* LDSubjectBottomView.swift in Sources */,
+				1832D1A71D88084800416295 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				18A018941D83E4B100BC807A /* LDGoodListModel.swift in Sources */,
 				1850676A1D7FEAD600393706 /* LDNavigationController.swift in Sources */,
 				18A018921D83E24500BC807A /* LDCategoryModel.swift in Sources */,
@@ -1180,10 +1230,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Floral/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xfsrn.www.Floral;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Floral/Classes/Other/Lib/TableView+AutoLayout/Floral-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Debug;
 		};
@@ -1193,10 +1247,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Floral/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xfsrn.www.Floral;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Floral/Classes/Other/Lib/TableView+AutoLayout/Floral-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Release;
 		};

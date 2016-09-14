@@ -30,7 +30,7 @@ class LDSubjectController: UIViewController {
     
     private func setupNavgation() {
         
-        self.navigationItem.title = ""
+        self.navigationItem.title = "专题"
         
     }
     
@@ -71,8 +71,21 @@ extension LDSubjectController {
                 return
             }
             
+            print("======\(responseObject)")
             
-//            let resultArray = responseObject["result"]
+            let resultArray = responseObject["result"] as! [[String: AnyObject]]
+            
+            var tempArray = [LDSubjectModel]()
+            for dict in resultArray {
+                
+                let model = LDSubjectModel(dict: dict);
+                
+                tempArray.append(model)
+            }
+            
+            self.dataArray = tempArray
+            
+            self.tableView.reloadData()
             
             }) { (error) in
                 
@@ -87,7 +100,7 @@ extension LDSubjectController {
 extension LDSubjectController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10;
+        return (self.dataArray?.count)!;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
