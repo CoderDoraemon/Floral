@@ -27,7 +27,7 @@ class LDSubjectModel: NSObject {
     /// 评论数
     var fnCommentNum : NSInteger = 0
     /// 商品列表
-    var goodsList : LDGoodListModel?
+    var goodsList : [LDGoodListModel]?
     /// 搜索键值
     var keywords : String?
     /// url
@@ -70,12 +70,21 @@ class LDSubjectModel: NSObject {
             return
         }
         
-        if key == "goodsList" {
-            if (value != nil) {
-                goodsList = LDGoodListModel(dict: value as! Dictionary)
-            }
-            return
-        }
+//        if key == "goodsList" {
+//            if (value != nil) {
+//                
+//                var tempArray = [LDGoodListModel]()
+//                for dict in (value as! Array) {
+//                    
+//                    let model = LDGoodListModel(dict: dict);
+//                    
+//                    tempArray.append(model)
+//                }
+//                
+//                goodsList = tempArray
+//            }
+//            return
+//        }
         
         super.setValue(value, forKey: key)
         

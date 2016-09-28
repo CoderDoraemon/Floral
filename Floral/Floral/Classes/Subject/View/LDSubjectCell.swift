@@ -7,20 +7,50 @@
 //
 
 import UIKit
+import Kingfisher
 
 class LDSubjectCell: UITableViewCell {
 
+    var model : LDSubjectModel? {
+        
+        didSet {
+            
+            topImageView.kf_setImageWithURL(NSURL(string: (model?.smallIcon)!)!, placeholderImage: UIImage(named: "placehodler"), optionsInfo:[.Transition(ImageTransition.Fade(1))], progressBlock: nil, completionHandler: nil)
+            
+            iconImageView.kf_setImageWithURL(NSURL(string: (model?.author?.headImg)!)!, placeholderImage: UIImage(named: "pc_default_avatar"), optionsInfo: [.Transition(ImageTransition.Fade(1))], progressBlock: nil, completionHandler: nil)
+            
+            nameLabel.text = model?.author?.userName ?? "佚名"
+            
+            identityLabel.text = model?.author?.identity
+            
+            categoryLabel.text = "["+(model?.category?.name)!+"]"
+            
+            categoryNameLabel.text = model?.title
+            
+            descLabel.text = model?.desc
+            
+            bottomView.model = model
+            
+        }
+        
+    }
+    
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        selectionStyle = .None
+        
         setupUI()
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private func setupUI() {
         
-        backgroundColor = UIColor(red: 241/255.0, green: 241/255.0, blue: 241/255.0, alpha: 1.0)
+        backgroundColor = UIColor.groupTableViewBackgroundColor()
         
         contentView.addSubview(topImageView)
         contentView.addSubview(bottomContentView)
@@ -34,11 +64,10 @@ class LDSubjectCell: UITableViewCell {
         bottomContentView.addSubview(cutLineView)
         bottomContentView.addSubview(bottomView)
         
-        
-        
+        makeConstraints()
     }
     
-    private func make() {
+    private func makeConstraints() {
         
         topImageView.snp_makeConstraints { (make) in
             make.top.left.equalTo(self.contentView).offset(10)
@@ -52,6 +81,7 @@ class LDSubjectCell: UITableViewCell {
             make.bottom.equalTo(self.contentView)
         }
         
+        
         iconImageView.snp_makeConstraints { (make) in
             make.top.equalTo(bottomContentView).offset(-20)
             make.height.width.equalTo(50)
@@ -63,14 +93,14 @@ class LDSubjectCell: UITableViewCell {
             make.bottom.right.equalTo(iconImageView)
         }
         
-        identityLabel.snp_makeConstraints { (make) in
+        nameLabel.snp_makeConstraints { (make) in
             make.right.equalTo(iconImageView.snp_left).offset(-10)
-            make.bottom.equalTo(iconImageView)
+            make.top.equalTo(bottomContentView).offset(5)
         }
         
-        nameLabel.snp_makeConstraints { (make) in
-            make.right.equalTo(identityLabel)
-            make.bottom.equalTo(identityLabel.snp_top).offset(5)
+        identityLabel.snp_makeConstraints { (make) in
+            make.right.equalTo(nameLabel)
+            make.top.equalTo(nameLabel.snp_bottom).offset(5)
         }
         
         categoryLabel.snp_makeConstraints { (make) in
@@ -98,7 +128,9 @@ class LDSubjectCell: UITableViewCell {
         }
         
         bottomView.snp_makeConstraints { (make) in
-            make
+            make.left.right.bottom.equalTo(bottomContentView)
+            make.top.equalTo(cutLineView.snp_bottom).offset(5)
+            make.height.equalTo(35)
         }
         
     }
@@ -118,6 +150,8 @@ class LDSubjectCell: UITableViewCell {
         
         let bottomContentView = UIView()
         
+        bottomContentView.backgroundColor = UIColor.whiteColor()
+        
         return bottomContentView
         
     }()
@@ -125,6 +159,12 @@ class LDSubjectCell: UITableViewCell {
     private lazy var iconImageView : UIImageView = {
         
         let iconImageView = UIImageView()
+        
+        iconImageView.layer.cornerRadius = 25
+        iconImageView.layer.masksToBounds = true
+        
+        iconImageView.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
+        iconImageView.layer.borderWidth = 1
         
         return iconImageView
         
@@ -142,6 +182,8 @@ class LDSubjectCell: UITableViewCell {
         
         let nameLabel = UILabel()
         
+        nameLabel.font = UIFont.systemFontOfSize(12)
+        
         return nameLabel
         
     }()
@@ -149,6 +191,8 @@ class LDSubjectCell: UITableViewCell {
     private lazy var identityLabel : UILabel = {
         
         let identityLabel = UILabel()
+        
+        identityLabel.font = UIFont.systemFontOfSize(10)
         
         return identityLabel
         
@@ -158,6 +202,8 @@ class LDSubjectCell: UITableViewCell {
         
         let categoryLabel = UILabel()
         
+        categoryLabel.font = UIFont.systemFontOfSize(12)
+        
         return categoryLabel
         
     }()
@@ -165,6 +211,7 @@ class LDSubjectCell: UITableViewCell {
     private lazy var categoryNameLabel : UILabel = {
         
         let categoryNameLabel = UILabel()
+        categoryNameLabel.font = UIFont.systemFontOfSize(12)
         
         return categoryNameLabel
         
@@ -173,6 +220,8 @@ class LDSubjectCell: UITableViewCell {
     private lazy var descLabel : UILabel = {
         
         let descLabel = UILabel()
+        descLabel.font = UIFont.systemFontOfSize(12)
+        descLabel.numberOfLines = 0
         
         return descLabel
         
@@ -181,6 +230,8 @@ class LDSubjectCell: UITableViewCell {
     private lazy var cutLineView : UIView = {
     
         let cutLineView = UIView()
+        
+        cutLineView.backgroundColor = UIColor.groupTableViewBackgroundColor()
         
         return cutLineView
     

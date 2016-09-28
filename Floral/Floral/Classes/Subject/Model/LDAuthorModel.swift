@@ -23,4 +23,8 @@ class LDAuthorModel: NSObject {
         setValuesForKeysWithDictionary(dict)
     }
     
+    override func setValue(value: AnyObject?, forUndefinedKey key: String) {
+        
+    }
+    
 }

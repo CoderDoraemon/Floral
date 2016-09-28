@@ -11,6 +11,21 @@ import SnapKit
 
 class LDSubjectBottomView: UIView {
 
+    var model : LDSubjectModel? {
+        
+        didSet {
+            
+            let fnCommentNum = model?.fnCommentNum
+            let appoint = model?.appoint
+            let read = model?.read
+            
+            commentButton.setTitle("\(fnCommentNum!)", forState: .Normal)
+            loveButton.setTitle("\(appoint!)", forState: .Normal)
+            seeButton.setTitle("\(read!)", forState: .Normal)
+            
+        }
+        
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -18,25 +33,29 @@ class LDSubjectBottomView: UIView {
         setupUI()
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func setupUI() {
         
+        addSubview(commentButton)
         addSubview(seeButton)
         addSubview(loveButton)
-        addSubview(commentButton)
         
         commentButton.snp_makeConstraints { (make) in
             make.centerY.equalTo(self)
-            make.right.equalTo(self).offset(-20)
+            make.right.equalTo(self.snp_right).offset(-10)
         }
         
         loveButton.snp_makeConstraints { (make) in
             make.centerY.equalTo(self)
-            make.right.equalTo(self.snp_left).offset(-10)
+            make.right.equalTo(commentButton.snp_left).offset(-10)
         }
         
         seeButton.snp_makeConstraints { (make) in
             make.centerY.equalTo(self)
-            make.right.equalTo(self.snp_left).offset(-10)
+            make.right.equalTo(loveButton.snp_left).offset(-10)
         }
         
     }
@@ -51,12 +70,12 @@ class LDSubjectBottomView: UIView {
     
     private func createButton(imageNameString: String) -> UIButton {
         
-        let btn = UIButton(imageName: imageNameString, target: nil, selector: nil, font: UIFont.systemFontSize(12), titleColor: UIColor.blackColor().colorWithAlphaComponent(0.5), title: "0")
+        
+        let btn = UIButton(imageName: imageNameString, target: nil, selector: nil, font: UIFont.systemFontOfSize(12), titleColor: UIColor.blackColor().colorWithAlphaComponent(0.5), title: "0")
         
         btn.sizeToFit()
         btn.userInteractionEnabled = false
-        btn.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
-        btn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 5)
+        btn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -10)
         
         return btn
         

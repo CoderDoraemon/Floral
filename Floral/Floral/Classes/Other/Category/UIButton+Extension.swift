@@ -15,15 +15,17 @@ extension UIButton {
         self.init()
         
         if (imageName != nil) {
-            setImage(UIImage(named: imageName!), forState: UIControlState.Normal)
+            setImage(UIImage(named: imageName!), forState: .Normal)
         }
         
         if (target != nil && selector != nil) {
-            addTarget(target, action: selector!, forControlEvents: UIControlEvents.TouchUpInside)
+            addTarget(target, action: selector!, forControlEvents: .TouchUpInside)
         }
         
-        setTitle(title, forState: UIControlState.Normal)
+        setTitle(title, forState: .Normal)
         titleLabel?.font = font
+        
+        setTitleColor(titleColor, forState: .Normal)
         
     }
     
