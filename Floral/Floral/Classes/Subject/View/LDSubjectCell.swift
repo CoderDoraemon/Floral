@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class LDSubjectCell: UITableViewCell {
+class LDSubjectCell: UICollectionViewCell {
 
     var model : LDSubjectModel? {
         
@@ -18,6 +18,8 @@ class LDSubjectCell: UITableViewCell {
             topImageView.kf_setImageWithURL(NSURL(string: (model?.smallIcon)!)!, placeholderImage: UIImage(named: "placehodler"), optionsInfo:[.Transition(ImageTransition.Fade(1))], progressBlock: nil, completionHandler: nil)
             
             iconImageView.kf_setImageWithURL(NSURL(string: (model?.author?.headImg)!)!, placeholderImage: UIImage(named: "pc_default_avatar"), optionsInfo: [.Transition(ImageTransition.Fade(1))], progressBlock: nil, completionHandler: nil)
+            
+            vipImageView.image = model?.author!.authImage
             
             nameLabel.text = model?.author?.userName ?? "佚名"
             
@@ -35,11 +37,8 @@ class LDSubjectCell: UITableViewCell {
         
     }
     
-    
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        selectionStyle = .None
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         setupUI()
     }
@@ -50,7 +49,7 @@ class LDSubjectCell: UITableViewCell {
     
     private func setupUI() {
         
-        backgroundColor = UIColor.groupTableViewBackgroundColor()
+        backgroundColor = UIColor.whiteColor()
         
         contentView.addSubview(topImageView)
         contentView.addSubview(bottomContentView)
@@ -70,31 +69,32 @@ class LDSubjectCell: UITableViewCell {
     private func makeConstraints() {
         
         topImageView.snp_makeConstraints { (make) in
-            make.top.left.equalTo(self.contentView).offset(10)
-            make.right.equalTo(self.contentView).offset(-10)
+            make.top.equalTo(self.contentView)
+            make.left.equalTo(self.contentView)
+            make.right.equalTo(self.contentView)
             make.height.equalTo(180)
         }
         
         bottomContentView.snp_makeConstraints { (make) in
-            make.top.equalTo(topImageView.snp_bottom).offset(5)
+            make.top.equalTo(topImageView.snp_bottom).offset(kMargin * 0.5)
             make.left.right.equalTo(topImageView)
             make.bottom.equalTo(self.contentView)
         }
         
         
         iconImageView.snp_makeConstraints { (make) in
-            make.top.equalTo(bottomContentView).offset(-20)
+            make.top.equalTo(bottomContentView).offset(-kMargin * 2)
             make.height.width.equalTo(50)
-            make.right.equalTo(bottomContentView).offset(-10)
+            make.right.equalTo(bottomContentView).offset(-kMargin)
         }
         
         vipImageView.snp_makeConstraints { (make) in
-            make.height.width.equalTo(10)
+            make.height.width.equalTo(kMargin)
             make.bottom.right.equalTo(iconImageView)
         }
         
         nameLabel.snp_makeConstraints { (make) in
-            make.right.equalTo(iconImageView.snp_left).offset(-10)
+            make.right.equalTo(iconImageView.snp_left).offset(-kMargin)
             make.top.equalTo(bottomContentView).offset(5)
         }
         
@@ -105,31 +105,31 @@ class LDSubjectCell: UITableViewCell {
         
         categoryLabel.snp_makeConstraints { (make) in
             make.top.equalTo(identityLabel.snp_bottom).offset(5)
-            make.left.equalTo(bottomContentView).offset(10)
+            make.left.equalTo(bottomContentView).offset(kMargin)
         }
-        
+
         categoryNameLabel.snp_makeConstraints { (make) in
             make.left.equalTo(categoryLabel)
             make.right.equalTo(iconImageView)
-            make.top.equalTo(categoryLabel.snp_bottom).offset(10)
+            make.top.equalTo(categoryLabel.snp_bottom).offset(kMargin)
         }
         
         descLabel.snp_makeConstraints { (make) in
             make.left.equalTo(categoryLabel)
             make.right.equalTo(iconImageView)
-            make.top.equalTo(categoryNameLabel.snp_bottom).offset(10)
+            make.top.equalTo(categoryNameLabel.snp_bottom).offset(kMargin)
         }
         
         cutLineView.snp_makeConstraints { (make) in
             make.left.equalTo(categoryLabel)
             make.right.equalTo(iconImageView)
-            make.top.equalTo(descLabel.snp_bottom).offset(10)
+            make.top.equalTo(descLabel.snp_bottom).offset(kMargin)
             make.height.equalTo(1.0)
         }
-        
+
         bottomView.snp_makeConstraints { (make) in
-            make.left.right.bottom.equalTo(bottomContentView)
-            make.top.equalTo(cutLineView.snp_bottom).offset(5)
+            make.left.right.equalTo(bottomContentView)
+            make.top.equalTo(cutLineView.snp_bottom)
             make.height.equalTo(35)
         }
         
@@ -221,7 +221,7 @@ class LDSubjectCell: UITableViewCell {
         
         let descLabel = UILabel()
         descLabel.font = UIFont.systemFontOfSize(12)
-        descLabel.numberOfLines = 0
+        descLabel.numberOfLines = 2
         
         return descLabel
         
@@ -237,9 +237,9 @@ class LDSubjectCell: UITableViewCell {
     
     }()
     
-    private lazy var bottomView : LDSubjectBottomView = {
+    private lazy var bottomView : LDSubjectBottomRightView = {
         
-        let bottomView = LDSubjectBottomView()
+        let bottomView = LDSubjectBottomRightView()
         
         return bottomView
         

@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1832D1961D87F49100416295 /* LDSubjectBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1832D1951D87F49100416295 /* LDSubjectBottomView.swift */; };
+		1819F8931DA25C620055929E /* LDCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1819F8921DA25C620055929E /* LDCommon.swift */; };
+		1819F8951DA263670055929E /* LDSubjectFlowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1819F8941DA263670055929E /* LDSubjectFlowCell.swift */; };
+		1819F8971DA2641E0055929E /* LDSubjectBottomLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1819F8961DA2641E0055929E /* LDSubjectBottomLeftView.swift */; };
+		1832D1961D87F49100416295 /* LDSubjectBottomRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1832D1951D87F49100416295 /* LDSubjectBottomRightView.swift */; };
 		1832D1981D87F63100416295 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1832D1971D87F63100416295 /* UIButton+Extension.swift */; };
 		1832D1A41D88084800416295 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1832D19D1D88084800416295 /* UITableView+FDIndexPathHeightCache.m */; };
 		1832D1A51D88084800416295 /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1832D19F1D88084800416295 /* UITableView+FDKeyedHeightCache.m */; };
@@ -33,6 +36,8 @@
 		1850676E1D7FEB1300393706 /* LDCommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850676D1D7FEB1300393706 /* LDCommunityController.swift */; };
 		185067701D7FEB2400393706 /* LDStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850676F1D7FEB2400393706 /* LDStoreController.swift */; };
 		185067721D7FEB3500393706 /* LDSubjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185067711D7FEB3500393706 /* LDSubjectController.swift */; };
+		189428D31DA29F0900172D72 /* CHTCollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189428D21DA29F0900172D72 /* CHTCollectionViewWaterfallLayout.swift */; };
+		189428D51DA2A15700172D72 /* NSString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189428D41DA2A15700172D72 /* NSString+Extension.swift */; };
 		18A0188B1D83B0D600BC807A /* LDSubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0188A1D83B0D600BC807A /* LDSubjectCell.swift */; };
 		18A0188E1D83E16C00BC807A /* LDSubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0188D1D83E16C00BC807A /* LDSubjectModel.swift */; };
 		18A018901D83E22900BC807A /* LDAuthorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0188F1D83E22900BC807A /* LDAuthorModel.swift */; };
@@ -40,7 +45,6 @@
 		18A018941D83E4B100BC807A /* LDGoodListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A018931D83E4B100BC807A /* LDGoodListModel.swift */; };
 		18CEB9FE1D7FF20C003A8080 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEB9FD1D7FF20C003A8080 /* UIImage+Extension.swift */; };
 		18CEBA001D7FF7A3003A8080 /* LDNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEB9FF1D7FF7A3003A8080 /* LDNetworkManager.swift */; };
-		18CEBA021D800888003A8080 /* LDTitleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEBA011D800888003A8080 /* LDTitleScrollView.swift */; };
 		763CBA693A4037297C88E27A /* Pods_Floral.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD497BCADC395D4D3C5BC49 /* Pods_Floral.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,9 +66,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1832D1951D87F49100416295 /* LDSubjectBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSubjectBottomView.swift; sourceTree = "<group>"; };
+		1819F86B1DA23C800055929E /* Floral-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Floral-Bridging-Header.h"; sourceTree = "<group>"; };
+		1819F8921DA25C620055929E /* LDCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDCommon.swift; sourceTree = "<group>"; };
+		1819F8941DA263670055929E /* LDSubjectFlowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSubjectFlowCell.swift; sourceTree = "<group>"; };
+		1819F8961DA2641E0055929E /* LDSubjectBottomLeftView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSubjectBottomLeftView.swift; sourceTree = "<group>"; };
+		1832D1951D87F49100416295 /* LDSubjectBottomRightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSubjectBottomRightView.swift; sourceTree = "<group>"; };
 		1832D1971D87F63100416295 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
-		1832D19B1D88084800416295 /* Floral-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Floral-Bridging-Header.h"; sourceTree = "<group>"; };
 		1832D19C1D88084800416295 /* UITableView+FDIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDIndexPathHeightCache.h"; sourceTree = "<group>"; };
 		1832D19D1D88084800416295 /* UITableView+FDIndexPathHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDIndexPathHeightCache.m"; sourceTree = "<group>"; };
 		1832D19E1D88084800416295 /* UITableView+FDKeyedHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDKeyedHeightCache.h"; sourceTree = "<group>"; };
@@ -99,6 +106,8 @@
 		1850676D1D7FEB1300393706 /* LDCommunityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDCommunityController.swift; sourceTree = "<group>"; };
 		1850676F1D7FEB2400393706 /* LDStoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDStoreController.swift; sourceTree = "<group>"; };
 		185067711D7FEB3500393706 /* LDSubjectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSubjectController.swift; sourceTree = "<group>"; };
+		189428D21DA29F0900172D72 /* CHTCollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHTCollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
+		189428D41DA2A15700172D72 /* NSString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+Extension.swift"; sourceTree = "<group>"; };
 		18A0188A1D83B0D600BC807A /* LDSubjectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSubjectCell.swift; sourceTree = "<group>"; };
 		18A0188D1D83E16C00BC807A /* LDSubjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSubjectModel.swift; sourceTree = "<group>"; };
 		18A0188F1D83E22900BC807A /* LDAuthorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDAuthorModel.swift; sourceTree = "<group>"; };
@@ -106,7 +115,6 @@
 		18A018931D83E4B100BC807A /* LDGoodListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDGoodListModel.swift; sourceTree = "<group>"; };
 		18CEB9FD1D7FF20C003A8080 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		18CEB9FF1D7FF7A3003A8080 /* LDNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDNetworkManager.swift; sourceTree = "<group>"; };
-		18CEBA011D800888003A8080 /* LDTitleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTitleScrollView.swift; sourceTree = "<group>"; };
 		2DD497BCADC395D4D3C5BC49 /* Pods_Floral.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Floral.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9CEAAEFBBF15CB119E2C4D3 /* Pods-Floral.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Floral.release.xcconfig"; path = "Pods/Target Support Files/Pods-Floral/Pods-Floral.release.xcconfig"; sourceTree = "<group>"; };
 		CECBF0C52EAE2D26A722CC07 /* Pods-Floral.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Floral.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Floral/Pods-Floral.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +149,7 @@
 		1832D1991D8807F200416295 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				189428D21DA29F0900172D72 /* CHTCollectionViewWaterfallLayout.swift */,
 				1832D19A1D88083C00416295 /* TableView+AutoLayout */,
 			);
 			path = Lib;
@@ -157,7 +166,6 @@
 				1832D1A11D88084800416295 /* UITableView+FDTemplateLayoutCell.m */,
 				1832D1A21D88084800416295 /* UITableView+FDTemplateLayoutCellDebug.h */,
 				1832D1A31D88084800416295 /* UITableView+FDTemplateLayoutCellDebug.m */,
-				1832D19B1D88084800416295 /* Floral-Bridging-Header.h */,
 			);
 			path = "TableView+AutoLayout";
 			sourceTree = "<group>";
@@ -334,6 +342,8 @@
 				1850669C1D7FE9F200393706 /* Category */,
 				1850669D1D7FE9F200393706 /* Resources */,
 				185067001D7FE9F200393706 /* Tools */,
+				1819F86B1DA23C800055929E /* Floral-Bridging-Header.h */,
+				1819F8921DA25C620055929E /* LDCommon.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -343,6 +353,7 @@
 			children = (
 				18CEB9FD1D7FF20C003A8080 /* UIImage+Extension.swift */,
 				1832D1971D87F63100416295 /* UIButton+Extension.swift */,
+				189428D41DA2A15700172D72 /* NSString+Extension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -456,9 +467,10 @@
 		185067081D7FE9F200393706 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				18CEBA011D800888003A8080 /* LDTitleScrollView.swift */,
 				18A0188A1D83B0D600BC807A /* LDSubjectCell.swift */,
-				1832D1951D87F49100416295 /* LDSubjectBottomView.swift */,
+				1819F8941DA263670055929E /* LDSubjectFlowCell.swift */,
+				1832D1951D87F49100416295 /* LDSubjectBottomRightView.swift */,
+				1819F8961DA2641E0055929E /* LDSubjectBottomLeftView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -673,24 +685,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				185066601D7FE80600393706 /* ViewController.swift in Sources */,
+				189428D31DA29F0900172D72 /* CHTCollectionViewWaterfallLayout.swift in Sources */,
 				1850665E1D7FE80600393706 /* AppDelegate.swift in Sources */,
 				1850676E1D7FEB1300393706 /* LDCommunityController.swift in Sources */,
 				1832D1A41D88084800416295 /* UITableView+FDIndexPathHeightCache.m in Sources */,
 				185067701D7FEB2400393706 /* LDStoreController.swift in Sources */,
 				1832D1981D87F63100416295 /* UIButton+Extension.swift in Sources */,
+				1819F8951DA263670055929E /* LDSubjectFlowCell.swift in Sources */,
 				18A018901D83E22900BC807A /* LDAuthorModel.swift in Sources */,
 				185067721D7FEB3500393706 /* LDSubjectController.swift in Sources */,
 				185066661D7FE80600393706 /* Floral.xcdatamodeld in Sources */,
+				189428D51DA2A15700172D72 /* NSString+Extension.swift in Sources */,
 				1850676C1D7FEAFE00393706 /* LDMeController.swift in Sources */,
+				1819F8931DA25C620055929E /* LDCommon.swift in Sources */,
+				1819F8971DA2641E0055929E /* LDSubjectBottomLeftView.swift in Sources */,
 				18CEB9FE1D7FF20C003A8080 /* UIImage+Extension.swift in Sources */,
 				18CEBA001D7FF7A3003A8080 /* LDNetworkManager.swift in Sources */,
 				1832D1A51D88084800416295 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				185067681D7FEABE00393706 /* LDTabBarController.swift in Sources */,
-				18CEBA021D800888003A8080 /* LDTitleScrollView.swift in Sources */,
 				18A0188B1D83B0D600BC807A /* LDSubjectCell.swift in Sources */,
 				18A0188E1D83E16C00BC807A /* LDSubjectModel.swift in Sources */,
 				1832D1A61D88084800416295 /* UITableView+FDTemplateLayoutCell.m in Sources */,
-				1832D1961D87F49100416295 /* LDSubjectBottomView.swift in Sources */,
+				1832D1961D87F49100416295 /* LDSubjectBottomRightView.swift in Sources */,
 				1832D1A71D88084800416295 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				18A018941D83E4B100BC807A /* LDGoodListModel.swift in Sources */,
 				1850676A1D7FEAD600393706 /* LDNavigationController.swift in Sources */,
@@ -841,9 +857,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Floral/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xfsrn.www.Floral;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xfsrn.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Floral/Classes/Other/Lib/TableView+AutoLayout/Floral-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Floral/Classes/Other/Floral-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
@@ -858,9 +874,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Floral/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xfsrn.www.Floral;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xfsrn.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Floral/Classes/Other/Lib/TableView+AutoLayout/Floral-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Floral/Classes/Other/Floral-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Release;

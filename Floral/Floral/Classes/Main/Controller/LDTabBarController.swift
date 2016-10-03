@@ -34,7 +34,7 @@ class LDTabBarController: UITabBarController {
         
         childController.tabBarItem.title = title
         childController.tabBarItem.image = UIImage(named: "tb_\(childViewControllers.count - 1)")
-        childController.tabBarItem.selectedImage = UIImage.imageToOriginalImage("tb_\(childViewControllers.count - 1)" + "_selected")
+        childController.tabBarItem.selectedImage = UIImage.imageToOriginalImage("tb_\(childViewControllers.count - 1)" + "_s")
         
         
         
