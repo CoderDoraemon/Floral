@@ -15,6 +15,23 @@ class LDNavigationController: UINavigationController {
         
         
     }
+    
+    override func pushViewController(viewController: UIViewController, animated: Bool) {
+        
+        let navChildCount = viewControllers.count
+        
+        if navChildCount > 0 {
+            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.imageToOriginalImage("back"), style: .Plain, target: self, action: #selector(self.back))
+            viewController.hidesBottomBarWhenPushed = true
+            
+        }
+        super.pushViewController(viewController, animated: true)
+        
+    }
+    
+    @objc private func back() {
+        self.popViewControllerAnimated(true)
+    }
 
     
     

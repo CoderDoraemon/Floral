@@ -45,6 +45,9 @@
 		18A018941D83E4B100BC807A /* LDGoodListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A018931D83E4B100BC807A /* LDGoodListModel.swift */; };
 		18CEB9FE1D7FF20C003A8080 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEB9FD1D7FF20C003A8080 /* UIImage+Extension.swift */; };
 		18CEBA001D7FF7A3003A8080 /* LDNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEB9FF1D7FF7A3003A8080 /* LDNetworkManager.swift */; };
+		18EC6CDE1DA8942500EEB7F4 /* LDSubjectDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EC6CDD1DA8942500EEB7F4 /* LDSubjectDetailController.swift */; };
+		18EC6CE11DA8972B00EEB7F4 /* LDSubjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EC6CE01DA8972B00EEB7F4 /* LDSubjectViewModel.swift */; };
+		18EC6CE31DA8C2FC00EEB7F4 /* LDSubscribeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EC6CE21DA8C2FC00EEB7F4 /* LDSubscribeDetailView.swift */; };
 		763CBA693A4037297C88E27A /* Pods_Floral.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD497BCADC395D4D3C5BC49 /* Pods_Floral.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +118,9 @@
 		18A018931D83E4B100BC807A /* LDGoodListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDGoodListModel.swift; sourceTree = "<group>"; };
 		18CEB9FD1D7FF20C003A8080 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		18CEB9FF1D7FF7A3003A8080 /* LDNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDNetworkManager.swift; sourceTree = "<group>"; };
+		18EC6CDD1DA8942500EEB7F4 /* LDSubjectDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSubjectDetailController.swift; sourceTree = "<group>"; };
+		18EC6CE01DA8972B00EEB7F4 /* LDSubjectViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSubjectViewModel.swift; sourceTree = "<group>"; };
+		18EC6CE21DA8C2FC00EEB7F4 /* LDSubscribeDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSubscribeDetailView.swift; sourceTree = "<group>"; };
 		2DD497BCADC395D4D3C5BC49 /* Pods_Floral.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Floral.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9CEAAEFBBF15CB119E2C4D3 /* Pods-Floral.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Floral.release.xcconfig"; path = "Pods/Target Support Files/Pods-Floral/Pods-Floral.release.xcconfig"; sourceTree = "<group>"; };
 		CECBF0C52EAE2D26A722CC07 /* Pods-Floral.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Floral.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Floral/Pods-Floral.debug.xcconfig"; sourceTree = "<group>"; };
@@ -438,6 +444,7 @@
 		185067051D7FE9F200393706 /* Subject */ = {
 			isa = PBXGroup;
 			children = (
+				18EC6CDF1DA896EC00EEB7F4 /* ViewModel */,
 				185067061D7FE9F200393706 /* Controller */,
 				185067071D7FE9F200393706 /* Model */,
 				185067081D7FE9F200393706 /* View */,
@@ -449,6 +456,7 @@
 			isa = PBXGroup;
 			children = (
 				185067711D7FEB3500393706 /* LDSubjectController.swift */,
+				18EC6CDD1DA8942500EEB7F4 /* LDSubjectDetailController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -471,8 +479,17 @@
 				1819F8941DA263670055929E /* LDSubjectFlowCell.swift */,
 				1832D1951D87F49100416295 /* LDSubjectBottomRightView.swift */,
 				1819F8961DA2641E0055929E /* LDSubjectBottomLeftView.swift */,
+				18EC6CE21DA8C2FC00EEB7F4 /* LDSubscribeDetailView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		18EC6CDF1DA896EC00EEB7F4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18EC6CE01DA8972B00EEB7F4 /* LDSubjectViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		7A49AE6B40442FCF8F9C51ED /* Frameworks */ = {
@@ -693,11 +710,13 @@
 				1832D1981D87F63100416295 /* UIButton+Extension.swift in Sources */,
 				1819F8951DA263670055929E /* LDSubjectFlowCell.swift in Sources */,
 				18A018901D83E22900BC807A /* LDAuthorModel.swift in Sources */,
+				18EC6CDE1DA8942500EEB7F4 /* LDSubjectDetailController.swift in Sources */,
 				185067721D7FEB3500393706 /* LDSubjectController.swift in Sources */,
 				185066661D7FE80600393706 /* Floral.xcdatamodeld in Sources */,
 				189428D51DA2A15700172D72 /* NSString+Extension.swift in Sources */,
 				1850676C1D7FEAFE00393706 /* LDMeController.swift in Sources */,
 				1819F8931DA25C620055929E /* LDCommon.swift in Sources */,
+				18EC6CE11DA8972B00EEB7F4 /* LDSubjectViewModel.swift in Sources */,
 				1819F8971DA2641E0055929E /* LDSubjectBottomLeftView.swift in Sources */,
 				18CEB9FE1D7FF20C003A8080 /* UIImage+Extension.swift in Sources */,
 				18CEBA001D7FF7A3003A8080 /* LDNetworkManager.swift in Sources */,
@@ -710,6 +729,7 @@
 				1832D1A71D88084800416295 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				18A018941D83E4B100BC807A /* LDGoodListModel.swift in Sources */,
 				1850676A1D7FEAD600393706 /* LDNavigationController.swift in Sources */,
+				18EC6CE31DA8C2FC00EEB7F4 /* LDSubscribeDetailView.swift in Sources */,
 				18A018921D83E24500BC807A /* LDCategoryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
