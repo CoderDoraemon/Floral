@@ -99,6 +99,8 @@ class LDScrollTitleView: UIView {
     
     private var btnsArray: [AnyObject] = [AnyObject]()
     
+    private var preSelButton: UIButton?
+    
     /// 标题遮盖View
     private lazy var coverView: UIView = {
         
@@ -169,9 +171,18 @@ class LDScrollTitleView: UIView {
         
         for index in 0 ..< count! {
             
+            let btn: UIButton = self.btnsArray[index] as! UIButton
             
+            btn.frame = CGRectMake(self.titleWidth * CGFloat(index), 0, self.titleWidth, self.ld_height)
+            
+            if index == 0 {
+                btn.selected = true
+                self.preSelButton = btn
+            }
             
         }
+        
+        self.scrollView.contentSize = CGSizeMake(self.titleWidth * CGFloat(count!), 0)
         
     }
 
@@ -204,11 +215,31 @@ extension LDScrollTitleView {
             
             btn.titleLabel?.font = self.titleFont
             
+            btn.addTarget(self, action: #selector(self.btnClick(_:)), forControlEvents: .TouchUpInside)
+            
             self.scrollView.addSubview(btn)
             
             self.btnsArray.append(btn)
             
         }
+        
+    }
+    
+    @objc private func btnClick(btn: UIButton) {
+        
+        if self.preSelButton == btn {
+            return
+        }
+        
+        self.preSelButton?.selected = false
+        self.preSelButton = btn
+        self.preSelButton?.selected = true
+        
+        UIView.animateWithDuration(0.25, animations: { 
+            self.underLineView.ld_width =
+            }, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
+        
+        self.myBlcok(index: btn.tag)
         
     }
     
