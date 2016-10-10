@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 extension UIView {
     
     public var ld_x: CGFloat {
@@ -17,9 +16,9 @@ extension UIView {
             return self.frame.origin.x
         }
         
-        set {
+        set(newVal) {
             var ld_frame: CGRect = self.frame
-            ld_frame.origin.x = ld_x
+            ld_frame.origin.x = newVal
             self.frame = ld_frame
             
         }
@@ -33,9 +32,9 @@ extension UIView {
             return self.frame.origin.y
         }
         
-        set {
+        set(newVal) {
             var ld_frame: CGRect = self.frame
-            ld_frame.origin.x = ld_y
+            ld_frame.origin.y = newVal
             self.frame = ld_frame
             
         }
@@ -48,9 +47,9 @@ extension UIView {
             return self.frame.size.width
         }
         
-        set {
+        set(newVal) {
             var ld_frame: CGRect = self.frame
-            ld_frame.size.width = ld_width
+            ld_frame.size.width = newVal
             self.frame = ld_frame
             
         }
@@ -63,9 +62,9 @@ extension UIView {
             return self.frame.size.height
         }
         
-        set {
+        set(newVal) {
             var ld_frame: CGRect = self.frame
-            ld_frame.size.height = ld_height
+            ld_frame.size.height = newVal
             self.frame = ld_frame
             
         }
@@ -78,9 +77,9 @@ extension UIView {
             return self.frame.size
         }
         
-        set {
+        set(newVal) {
             var ld_frame: CGRect = self.frame
-            ld_frame.size = ld_size
+            ld_frame.size = newVal
             self.frame = ld_frame
             
         }
@@ -93,9 +92,9 @@ extension UIView {
             return self.center.x
         }
         
-        set {
+        set(newVal) {
             var ld_center: CGPoint = self.center
-            ld_center.x = ld_centerX
+            ld_center.x = newVal
             self.center = ld_center
             
         }
@@ -108,9 +107,9 @@ extension UIView {
             return self.center.y
         }
         
-        set {
+        set(newVal) {
             var ld_center: CGPoint = self.center
-            ld_center.y = ld_centerY
+            ld_center.y = newVal
             self.center = ld_center
             
         }

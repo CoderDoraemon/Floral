@@ -36,6 +36,9 @@
 		1850676E1D7FEB1300393706 /* LDCommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850676D1D7FEB1300393706 /* LDCommunityController.swift */; };
 		185067701D7FEB2400393706 /* LDStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850676F1D7FEB2400393706 /* LDStoreController.swift */; };
 		185067721D7FEB3500393706 /* LDSubjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185067711D7FEB3500393706 /* LDSubjectController.swift */; };
+		188387461DAB4AD6007A103F /* LDCommunityCircleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188387451DAB4AD6007A103F /* LDCommunityCircleController.swift */; };
+		188387481DAB4AEF007A103F /* LDCommunitySubscribeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188387471DAB4AEF007A103F /* LDCommunitySubscribeController.swift */; };
+		1883874A1DAB610E007A103F /* LDCommunityChocenessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188387491DAB610E007A103F /* LDCommunityChocenessController.swift */; };
 		189428D31DA29F0900172D72 /* CHTCollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189428D21DA29F0900172D72 /* CHTCollectionViewWaterfallLayout.swift */; };
 		189428D51DA2A15700172D72 /* NSString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189428D41DA2A15700172D72 /* NSString+Extension.swift */; };
 		18A0188B1D83B0D600BC807A /* LDSubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0188A1D83B0D600BC807A /* LDSubjectCell.swift */; };
@@ -111,6 +114,9 @@
 		1850676D1D7FEB1300393706 /* LDCommunityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDCommunityController.swift; sourceTree = "<group>"; };
 		1850676F1D7FEB2400393706 /* LDStoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDStoreController.swift; sourceTree = "<group>"; };
 		185067711D7FEB3500393706 /* LDSubjectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSubjectController.swift; sourceTree = "<group>"; };
+		188387451DAB4AD6007A103F /* LDCommunityCircleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDCommunityCircleController.swift; sourceTree = "<group>"; };
+		188387471DAB4AEF007A103F /* LDCommunitySubscribeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDCommunitySubscribeController.swift; sourceTree = "<group>"; };
+		188387491DAB610E007A103F /* LDCommunityChocenessController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDCommunityChocenessController.swift; sourceTree = "<group>"; };
 		189428D21DA29F0900172D72 /* CHTCollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHTCollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
 		189428D41DA2A15700172D72 /* NSString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+Extension.swift"; sourceTree = "<group>"; };
 		18A0188A1D83B0D600BC807A /* LDSubjectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSubjectCell.swift; sourceTree = "<group>"; };
@@ -261,6 +267,9 @@
 		185066901D7FE9F200393706 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				188387421DAB4A7D007A103F /* Subscribe */,
+				188387411DAB4A61007A103F /* Circle */,
+				188387401DAB4A46007A103F /* Choiceness */,
 				1850676D1D7FEB1300393706 /* LDCommunityController.swift */,
 			);
 			path = Controller;
@@ -480,6 +489,30 @@
 				18EC6CE21DA8C2FC00EEB7F4 /* LDSubscribeDetailView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		188387401DAB4A46007A103F /* Choiceness */ = {
+			isa = PBXGroup;
+			children = (
+				188387491DAB610E007A103F /* LDCommunityChocenessController.swift */,
+			);
+			name = Choiceness;
+			sourceTree = "<group>";
+		};
+		188387411DAB4A61007A103F /* Circle */ = {
+			isa = PBXGroup;
+			children = (
+				188387451DAB4AD6007A103F /* LDCommunityCircleController.swift */,
+			);
+			name = Circle;
+			sourceTree = "<group>";
+		};
+		188387421DAB4A7D007A103F /* Subscribe */ = {
+			isa = PBXGroup;
+			children = (
+				188387471DAB4AEF007A103F /* LDCommunitySubscribeController.swift */,
+			);
+			name = Subscribe;
 			sourceTree = "<group>";
 		};
 		18EC6CDF1DA896EC00EEB7F4 /* ViewModel */ = {
@@ -708,6 +741,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				185066601D7FE80600393706 /* ViewController.swift in Sources */,
+				188387461DAB4AD6007A103F /* LDCommunityCircleController.swift in Sources */,
 				189428D31DA29F0900172D72 /* CHTCollectionViewWaterfallLayout.swift in Sources */,
 				1850665E1D7FE80600393706 /* AppDelegate.swift in Sources */,
 				1850676E1D7FEB1300393706 /* LDCommunityController.swift in Sources */,
@@ -715,6 +749,7 @@
 				185067701D7FEB2400393706 /* LDStoreController.swift in Sources */,
 				1832D1981D87F63100416295 /* UIButton+Extension.swift in Sources */,
 				1819F8951DA263670055929E /* LDSubjectFlowCell.swift in Sources */,
+				188387481DAB4AEF007A103F /* LDCommunitySubscribeController.swift in Sources */,
 				18A018901D83E22900BC807A /* LDAuthorModel.swift in Sources */,
 				18EC6CDE1DA8942500EEB7F4 /* LDSubjectDetailController.swift in Sources */,
 				185067721D7FEB3500393706 /* LDSubjectController.swift in Sources */,
@@ -724,6 +759,7 @@
 				1819F8931DA25C620055929E /* LDCommon.swift in Sources */,
 				18EC6CE11DA8972B00EEB7F4 /* LDSubjectViewModel.swift in Sources */,
 				1819F8971DA2641E0055929E /* LDSubjectBottomLeftView.swift in Sources */,
+				1883874A1DAB610E007A103F /* LDCommunityChocenessController.swift in Sources */,
 				18CEB9FE1D7FF20C003A8080 /* UIImage+Extension.swift in Sources */,
 				84D0AD1D1DAA4656004816B8 /* UIView+Extension.swift in Sources */,
 				18CEBA001D7FF7A3003A8080 /* LDNetworkManager.swift in Sources */,

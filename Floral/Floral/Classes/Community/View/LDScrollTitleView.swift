@@ -10,67 +10,50 @@ import UIKit
 
 class LDScrollTitleView: UIView {
     
-    enum LDTitleColorGradientStyle {
-        case RGB    // RGB:默认RGB样式
-        case Fill   // 填充
-    }
-    
     internal var titlesArray: [String]? {
         
         didSet {
             
-            
+            self.setupUI(titlesArray!)
             
         }
         
     }
     
     /// 标题按钮默认选中颜色
-    private var norColor: UIColor? {
+    private lazy var norColor: UIColor = {
         
-        get {
-           
-            if self.norColor == nil {
-                return UIColor.blackColor()
-            }
-            return self.norColor
-        }
+        let color: UIColor = UIColor.blackColor()
         
-    }
+        return color
+        
+    }()
     
     /// 标题按钮选中颜色
-    private var selColor: UIColor? {
+    private lazy var selColor: UIColor = {
         
-        get {
-            
-            if self.selColor == nil {
-                return UIColor.redColor()
-            }
-            return self.selColor
-        }
+        let color: UIColor = UIColor.redColor()
         
-    }
+        return color
+        
+    }()
     /// 下标宽度是否相等
     private var isUnderLineEqualTitleWidth: Bool = true
     /// scrollView的背景色
-    private var titleScrollViewColor: UIColor?
+    private var titleScrollViewColor: UIColor = {
+        let bgColor: UIColor = UIColor.whiteColor()
+        return bgColor
+    }()
     /// 标题的高度
     private var titleHeight: CGFloat = 44
     /// 标题的宽度
     private var titleWidth: CGFloat = 0
     /// 标题字体
-    private var titleFont: UIFont? {
-        get {
-            if self.titleFont == nil {
-                return UIFont.systemFontOfSize(17)
-            }
-            return self.titleFont
-        }
-    }
-    /// 所有标题数组
-    private var titleLabels: [String] = [String]()
-    /// 标题宽度数组
-    private var titleWidths: [CGFloat] = [CGFloat]()
+    private lazy var titleFont: UIFont = {
+        let font: UIFont = UIFont.systemFontOfSize(17)
+        return font
+    }()
+    
     /// 是否显示下标
     private var isShowUnderLine: Bool = true
     /// 是否字体渐变
@@ -93,22 +76,18 @@ class LDScrollTitleView: UIView {
     private var selIndex: NSInteger = 0
     
     
-    private var underLineColor: UIColor?
+    private lazy var underLineColor: UIColor = {
+        let color: UIColor = self.selColor
+        
+        return color
+    }()
     
-    private var underLineH: CGFloat = 0
+    private var underLineH: CGFloat = 2
     
     private var btnsArray: [AnyObject] = [AnyObject]()
     
     private var preSelButton: UIButton?
     
-    /// 标题遮盖View
-    private lazy var coverView: UIView = {
-        
-        let coverView: UIView = UIView()
-        
-        return coverView
-        
-    }()
     
     private lazy var underLineView: UIView = {
         
@@ -117,16 +96,6 @@ class LDScrollTitleView: UIView {
         return underLineView
         
     }()
-    
-    class func scrollTitleView(titleClick: (index: NSInteger)->()) -> LDScrollTitleView {
-        
-        let titleView = LDScrollTitleView()
-        
-        titleView.myBlcok = titleClick
-        
-        return titleView
-        
-    }
     
     
     private var myBlcok: (index: NSInteger)->() = {_ in }
@@ -140,6 +109,15 @@ class LDScrollTitleView: UIView {
     }()
     
     
+    class func scrollTitleView(titleClick: (index: NSInteger)->()) -> LDScrollTitleView {
+        
+        let titleView = LDScrollTitleView()
+        
+        titleView.myBlcok = titleClick
+        
+        return titleView
+        
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -178,13 +156,20 @@ class LDScrollTitleView: UIView {
             if index == 0 {
                 btn.selected = true
                 self.preSelButton = btn
+                
+                self.underLineView.ld_width = NSString.stringCalculateLabelWidth((btn.titleLabel?.text)!, labelHeight: CGFloat.max, labelFont: (btn.titleLabel?.font)!)
+                
+                self.underLineView.ld_centerX = btn.ld_centerX
             }
             
         }
         
         self.scrollView.contentSize = CGSizeMake(self.titleWidth * CGFloat(count!), 0)
         
+        self.underLineView.ld_y = self.ld_height - self.underLineH - 1
+        
     }
+    
 
 }
 
@@ -193,6 +178,37 @@ extension LDScrollTitleView {
     private func setup() {
         
         self.addSubview(self.scrollView)
+        
+    }
+    
+    private func setupUI(titlesArray: [String]) {
+        
+        self.btnsArray.removeAll()
+        
+        self.underLineView.removeFromSuperview()
+        
+        for view in self.scrollView.subviews {
+            if view.isKindOfClass(UIButton) {
+                view.removeFromSuperview()
+            }
+        }
+        
+        self .setupTitleButton(titlesArray)
+        
+        if self.isShowUnderLine {
+            self.setupUnderLineView()
+        }
+        
+        
+    }
+    
+    private func setupUnderLineView() {
+        
+        self.scrollView.addSubview(self.underLineView)
+        
+        self.underLineView.backgroundColor = self.underLineColor
+        
+        self.underLineView.ld_height = self.underLineH
         
     }
     
@@ -227,19 +243,21 @@ extension LDScrollTitleView {
     
     @objc private func btnClick(btn: UIButton) {
         
-        if self.preSelButton == btn {
-            return
-        }
+//        if self.preSelButton == btn {
+//            return
+//        }
         
         self.preSelButton?.selected = false
         self.preSelButton = btn
         self.preSelButton?.selected = true
         
         UIView.animateWithDuration(0.25, animations: { 
-            self.underLineView.ld_width =
-            }, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
+            self.underLineView.ld_width = NSString.stringCalculateLabelWidth((btn.titleLabel?.text)!, labelHeight: CGFloat.max, labelFont: (btn.titleLabel?.font)!)
+            self.underLineView.ld_centerX = btn.ld_centerX
+            }) { (isFinish) in
+               self.myBlcok(index: btn.tag)
+        }
         
-        self.myBlcok(index: btn.tag)
         
     }
     
@@ -248,8 +266,50 @@ extension LDScrollTitleView {
 
 extension LDScrollTitleView {
     
-    func setupTitleEffect(titleEffectBlock: (titleScrollViewColor: UIColor, norColor: UIColor, selColor: UIColor, titleFont: UIFont, titleHeight: Float, titleWidth: Float)->()) {
+    internal func setupTitleEffect(title_ScrollViewColor: UIColor?, nor_Color: UIColor?, sel_Color: UIColor?, title_Font: UIFont?, title_Height: CGFloat?, title_Width: CGFloat?) {
         
+        if title_ScrollViewColor != nil {
+            self.titleScrollViewColor = title_ScrollViewColor!
+        }
+        
+        if nor_Color != nil {
+            self.norColor = nor_Color!
+        }
+        
+        if sel_Color != nil {
+            self.selColor = sel_Color!
+        }
+        
+        if title_Font != nil {
+            self.titleFont = title_Font!
+        }
+        
+        if title_Height != nil {
+            self.titleHeight = title_Height!
+        }
+        if title_Width != nil {
+            self.titleWidth = title_Width!
+        }
+        
+        if self.titlesArray?.count > 0 {
+            self.setupUI(self.titlesArray!)
+        }
+        self.layoutIfNeeded()
+    }
+    
+    internal func setUpUnderLineEffect(showUnderLineView: Bool) {
+        
+        self.isShowUnderLine = showUnderLineView
+        
+        if self.titlesArray?.count > 0 {
+            self.setupUI(self.titlesArray!)
+        }
+        self.layoutIfNeeded()
+    }
+    
+    internal func changeBtnSelected(index: NSInteger) {
+        
+        self.btnClick(self.btnsArray[index] as! UIButton)
         
     }
     
