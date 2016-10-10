@@ -39,6 +39,10 @@
 		188387461DAB4AD6007A103F /* LDCommunityCircleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188387451DAB4AD6007A103F /* LDCommunityCircleController.swift */; };
 		188387481DAB4AEF007A103F /* LDCommunitySubscribeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188387471DAB4AEF007A103F /* LDCommunitySubscribeController.swift */; };
 		1883874A1DAB610E007A103F /* LDCommunityChocenessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188387491DAB610E007A103F /* LDCommunityChocenessController.swift */; };
+		188387531DAB6FFD007A103F /* LDCommunityAdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188387501DAB6FFD007A103F /* LDCommunityAdModel.swift */; };
+		188387541DAB6FFD007A103F /* LDCommunityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188387511DAB6FFD007A103F /* LDCommunityModel.swift */; };
+		188387561DAB7012007A103F /* LDCommunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188387551DAB7012007A103F /* LDCommunityViewModel.swift */; };
+		188387581DAB7403007A103F /* LDCommunityChocenessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188387571DAB7403007A103F /* LDCommunityChocenessCell.swift */; };
 		189428D31DA29F0900172D72 /* CHTCollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189428D21DA29F0900172D72 /* CHTCollectionViewWaterfallLayout.swift */; };
 		189428D51DA2A15700172D72 /* NSString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189428D41DA2A15700172D72 /* NSString+Extension.swift */; };
 		18A0188B1D83B0D600BC807A /* LDSubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0188A1D83B0D600BC807A /* LDSubjectCell.swift */; };
@@ -117,6 +121,10 @@
 		188387451DAB4AD6007A103F /* LDCommunityCircleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDCommunityCircleController.swift; sourceTree = "<group>"; };
 		188387471DAB4AEF007A103F /* LDCommunitySubscribeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDCommunitySubscribeController.swift; sourceTree = "<group>"; };
 		188387491DAB610E007A103F /* LDCommunityChocenessController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDCommunityChocenessController.swift; sourceTree = "<group>"; };
+		188387501DAB6FFD007A103F /* LDCommunityAdModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDCommunityAdModel.swift; sourceTree = "<group>"; };
+		188387511DAB6FFD007A103F /* LDCommunityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDCommunityModel.swift; sourceTree = "<group>"; };
+		188387551DAB7012007A103F /* LDCommunityViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDCommunityViewModel.swift; sourceTree = "<group>"; };
+		188387571DAB7403007A103F /* LDCommunityChocenessCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDCommunityChocenessCell.swift; sourceTree = "<group>"; };
 		189428D21DA29F0900172D72 /* CHTCollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHTCollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
 		189428D41DA2A15700172D72 /* NSString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+Extension.swift"; sourceTree = "<group>"; };
 		18A0188A1D83B0D600BC807A /* LDSubjectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSubjectCell.swift; sourceTree = "<group>"; };
@@ -257,9 +265,10 @@
 		1850668F1D7FE9F200393706 /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				1883874F1DAB6FFD007A103F /* Model */,
+				188387521DAB6FFD007A103F /* ViewModel */,
 				848DDCA31DAA20AC006F2EB2 /* View */,
 				185066901D7FE9F200393706 /* Controller */,
-				185066911D7FE9F200393706 /* Model */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -273,13 +282,6 @@
 				1850676D1D7FEB1300393706 /* LDCommunityController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		185066911D7FE9F200393706 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		185066931D7FE9F200393706 /* Main */ = {
@@ -515,6 +517,23 @@
 			name = Subscribe;
 			sourceTree = "<group>";
 		};
+		1883874F1DAB6FFD007A103F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				188387501DAB6FFD007A103F /* LDCommunityAdModel.swift */,
+				188387511DAB6FFD007A103F /* LDCommunityModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		188387521DAB6FFD007A103F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				188387551DAB7012007A103F /* LDCommunityViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		18EC6CDF1DA896EC00EEB7F4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -535,6 +554,7 @@
 			isa = PBXGroup;
 			children = (
 				848DDCA41DAA20C3006F2EB2 /* LDScrollTitleView.swift */,
+				188387571DAB7403007A103F /* LDCommunityChocenessCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -764,9 +784,12 @@
 				84D0AD1D1DAA4656004816B8 /* UIView+Extension.swift in Sources */,
 				18CEBA001D7FF7A3003A8080 /* LDNetworkManager.swift in Sources */,
 				1832D1A51D88084800416295 /* UITableView+FDKeyedHeightCache.m in Sources */,
+				188387561DAB7012007A103F /* LDCommunityViewModel.swift in Sources */,
 				185067681D7FEABE00393706 /* LDTabBarController.swift in Sources */,
 				18A0188B1D83B0D600BC807A /* LDSubjectCell.swift in Sources */,
 				18A0188E1D83E16C00BC807A /* LDSubjectModel.swift in Sources */,
+				188387581DAB7403007A103F /* LDCommunityChocenessCell.swift in Sources */,
+				188387541DAB6FFD007A103F /* LDCommunityModel.swift in Sources */,
 				1832D1A61D88084800416295 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				1832D1961D87F49100416295 /* LDSubjectBottomRightView.swift in Sources */,
 				1832D1A71D88084800416295 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
@@ -774,6 +797,7 @@
 				18A018941D83E4B100BC807A /* LDGoodListModel.swift in Sources */,
 				1850676A1D7FEAD600393706 /* LDNavigationController.swift in Sources */,
 				18EC6CE31DA8C2FC00EEB7F4 /* LDSubscribeDetailView.swift in Sources */,
+				188387531DAB6FFD007A103F /* LDCommunityAdModel.swift in Sources */,
 				18A018921D83E24500BC807A /* LDCategoryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

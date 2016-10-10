@@ -23,7 +23,7 @@ class LDScrollTitleView: UIView {
     /// 标题按钮默认选中颜色
     private lazy var norColor: UIColor = {
         
-        let color: UIColor = UIColor.blackColor()
+        let color: UIColor = UIColor.lightGrayColor()
         
         return color
         

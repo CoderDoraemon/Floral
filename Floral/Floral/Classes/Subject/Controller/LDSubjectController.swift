@@ -13,8 +13,6 @@ class LDSubjectController: UIViewController {
     
     private var currentPageIndex : NSInteger = 0
     
-    private var dataArray : [LDSubjectModel] = [LDSubjectModel]()
-    
     private var showFlow : Bool = false
     
     private let subjectViewModel: LDSubjectViewModel = LDSubjectViewModel()

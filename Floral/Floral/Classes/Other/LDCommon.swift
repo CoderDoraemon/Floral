@@ -22,5 +22,9 @@ let kMargin : CGFloat = 10
 
 
 /// 标识
+/// 精选
 let LDSubjectCellIdentifier = "LDSubjectCellIdentifier"
 let LDSubjectFlowCellIdentifier = "LDSubjectFlowCellIdentifier"
+
+/// 精选
+let LDCommunityChocenessCellIdentifier = "LDCommunityChocenessCellIdentifier"
