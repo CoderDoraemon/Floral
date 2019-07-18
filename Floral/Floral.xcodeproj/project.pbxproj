@@ -37,7 +37,6 @@
 		1806C9C522E01EA4006B9EE6 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806C9C422E01EA4006B9EE6 /* TabBar.swift */; };
 		1806C9CB22E0247D006B9EE6 /* UINavigationController+TZPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 1806C9C822E0247D006B9EE6 /* UINavigationController+TZPopGesture.m */; };
 		1806C9CC22E0247D006B9EE6 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 1806C9CA22E0247D006B9EE6 /* UINavigationController+FDFullscreenPopGesture.m */; };
-		1806C9CF22E02536006B9EE6 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 1806C9CE22E02536006B9EE6 /* MainVCSettings.json */; };
 		1806C9D122E03E3C006B9EE6 /* LDMaterialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806C9D022E03E3C006B9EE6 /* LDMaterialController.swift */; };
 		1806C9D322E03E4F006B9EE6 /* LDCommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806C9D222E03E4F006B9EE6 /* LDCommunityController.swift */; };
 		1806C9D522E03E5D006B9EE6 /* LDMineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806C9D422E03E5D006B9EE6 /* LDMineController.swift */; };
@@ -136,7 +135,6 @@
 		1806C9C822E0247D006B9EE6 /* UINavigationController+TZPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+TZPopGesture.m"; sourceTree = "<group>"; };
 		1806C9C922E0247D006B9EE6 /* UINavigationController+TZPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+TZPopGesture.h"; sourceTree = "<group>"; };
 		1806C9CA22E0247D006B9EE6 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
-		1806C9CE22E02536006B9EE6 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		1806C9D022E03E3C006B9EE6 /* LDMaterialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDMaterialController.swift; sourceTree = "<group>"; };
 		1806C9D222E03E4F006B9EE6 /* LDCommunityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDCommunityController.swift; sourceTree = "<group>"; };
 		1806C9D422E03E5D006B9EE6 /* LDMineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDMineController.swift; sourceTree = "<group>"; };
@@ -683,14 +681,6 @@
 			path = FDFullscreenPopGesture;
 			sourceTree = "<group>";
 		};
-		1806C9CD22E02536006B9EE6 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				1806C9CE22E02536006B9EE6 /* MainVCSettings.json */,
-			);
-			path = JSON;
-			sourceTree = "<group>";
-		};
 		1806C9DC22E041DF006B9EE6 /* RxSwift */ = {
 			isa = PBXGroup;
 			children = (
@@ -755,7 +745,6 @@
 		180A44FA22DFFDE500AC6800 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1806C9CD22E02536006B9EE6 /* JSON */,
 				18FECEB722CDD67D00F95794 /* Assets.xcassets */,
 				180A44FB22DFFDE500AC6800 /* Info.plist */,
 				1806C9E622E04534006B9EE6 /* Floral-Bridging-header.h */,
@@ -957,7 +946,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				180A44FF22DFFDE500AC6800 /* Info.plist in Resources */,
-				1806C9CF22E02536006B9EE6 /* MainVCSettings.json in Resources */,
 				18FECEB822CDD67D00F95794 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
