@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "idiom" : "iphone",
+      "filename" : "bureau_notice_show~iphone.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "bureau_notice_show~iphone@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

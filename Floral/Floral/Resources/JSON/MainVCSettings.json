@@ -1,0 +1,32 @@
+[
+ {
+    "vcName": "LDCommunityController",
+    "title": "研究社",
+    "normalImg": "tb_0",
+    "selImg": "tb_0_s"
+ },
+ {
+     "vcName": "LDCollegeController",
+     "title": "学院",
+     "normalImg": "tb_1",
+     "selImg": "tb_1_s"
+ },
+ {
+     "vcName": "LDSharedController",
+     "title": "分享会",
+     "normalImg": "tb_2",
+     "selImg": "tb_2_s"
+ },
+ {
+     "vcName": "LDMaterialController",
+     "title": "素材",
+     "normalImg": "tb_3",
+     "selImg": "tb_3_s"
+ },
+ {
+     "vcName": "LDMineController",
+     "title": "我的",
+     "normalImg": "tb_4",
+     "selImg": "tb_4_s"
+ }
+ ]

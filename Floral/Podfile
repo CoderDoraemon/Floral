@@ -1,73 +1,82 @@
 # Uncomment the next line to define a global platform for your project
- platform :ios, '9.0'
+platform :ios, '10.0'
 
 def common_Pods
-    use_frameworks!
-    
-    # Pods for NetworkManager
-    
-    pod 'RxDataSources'
-    pod 'RxCocoa'
-    # 网络请求
-    pod 'RxNetwork/Cacheable'
-    # JSON 解析
-    pod 'CleanJSON'
-    # rx_disposeBag
-    pod 'NSObject+Rx'
-    # 缓存
-    pod 'Cache'
-    # 字典转模型
-    pod 'HandyJSON'
-    # 自动布局
-    pod 'SnapKit'
-    # 语法糖
-    pod 'Then'
-    # 宽高自适应
-    pod 'AutoInch'
-    # 设备信号
-    pod 'DeviceKit'
-    # 富文本
-    pod 'SwiftyAttributes'
-    # 日历时间
-    pod 'SwiftDate'
-    # 加密库
-    pod 'CryptoSwift'
-    # 数据库
-    pod 'WCDB.swift'
-    # 图片浏览器
-    pod 'JXPhotoBrowser'
-    # 下载
-    pod 'Tiercel'
-    # 皮肤
-    pod 'SwiftTheme'
-    # 图片选择器
-    pod 'CLImagePickerTool'
-    
-    
-    # 拉刷新控件
-    pod 'MJRefresh'
-    # 占位图
-    pod 'LYEmptyView'
-    # 标签🏷
-    pod 'TTGTagCollectionView'
-    
+  use_frameworks!
+  
+  # Pods for NetworkManager
+  
+  pod 'RxDataSources'
+  pod 'RxCocoa'
+  # 网络请求
+  pod 'RxNetwork', '~> 1.0.1-beta'
+  # JSON 解析
+  pod 'CleanJSON'
+  # rx_disposeBag
+  pod 'NSObject+Rx'
+  # 缓存
+  pod 'Cache'
+  # 字典转模型
+  pod 'HandyJSON'
+  # 自动布局
+  pod 'SnapKit'
+  # 语法糖
+  pod 'Then'
+  # 宽高自适应
+  pod 'AutoInch'
+  # 设备信号
+  pod 'DeviceKit'
+  # 富文本
+  pod 'SwiftyAttributes'
+  # 日历时间
+  pod 'SwiftDate'
+  # 加密库
+  pod 'CryptoSwift'
+  # 数据库
+  pod 'WCDB.swift'
+  # 图片浏览器
+  pod 'JXPhotoBrowser'
+  # 下载
+  pod 'Tiercel'
+  # 皮肤
+  pod 'SwiftTheme'
+  # 图片选择器
+  pod 'CLImagePickerTool'
+  # Router
+  pod 'RxURLNavigator'
+  pod 'RxReachability'
+  pod 'RxActivityIndicator'
+  pod 'EmptyDataSet-Swift'
+  pod 'SwiftNotificationCenter'
+  pod 'NVActivityIndicatorView'
+  pod 'RxSwiftExt'
+  pod 'Hue'
+  
+  # 拉刷新控件
+  pod 'MJRefresh'
+  # 占位图
+  pod 'LYEmptyView'
+  # 标签🏷
+  pod 'TTGTagCollectionView'
+  pod 'WMPageController'
+  
 end
 
 target 'Floral' do
   # Comment the next line if you don't want to use dynamic frameworks
-
-
+  
+  
   # Pods for Floral
-common_Pods
+  common_Pods
 
   target 'FloralTests' do
     inherit! :search_paths
     # Pods for testing
   end
-
+  
   target 'FloralUITests' do
     inherit! :search_paths
     # Pods for testing
   end
-
+  
 end
