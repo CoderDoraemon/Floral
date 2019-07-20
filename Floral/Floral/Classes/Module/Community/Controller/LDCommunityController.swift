@@ -66,6 +66,19 @@ extension LDCommunityController {
     
     override func pageController(_ pageController: WMPageController, viewControllerAt index: Int) -> UIViewController {
         
+        if index == 0 {
+            
+            let layout = UICollectionViewFlowLayout()
+            layout.scrollDirection = .vertical
+            layout.minimumLineSpacing = autoDistance(10)
+            layout.minimumInteritemSpacing = autoDistance(10)
+            let row: CGFloat = 3
+            let w = Int((ScreenWidth - Margin_Left * 2 - autoDistance(10) * (row - 1)) / row)
+            layout.itemSize = CGSize(width: CGFloat(w), height: autoDistance(200))
+            
+            return LDRecommendController(collectionViewLayout: layout)
+        }
+        
         return UIViewController()
     }
     

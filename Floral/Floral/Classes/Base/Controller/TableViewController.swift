@@ -30,8 +30,6 @@ class TableViewController<RVM: RefreshViewModel>: ViewController<RVM> {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        
-        
         tableView.frame = view.bounds
     }
     

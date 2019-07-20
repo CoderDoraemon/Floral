@@ -10,11 +10,11 @@ import UIKit
 
 struct Model<T: Codable>: Codable {
     
-    let errorCode: Int
-    let errorMessage: String
-    let result: T
+    let code: Int
+    let text: String
+    let data: T
     
     var success: Bool {
-        return errorCode == 0
+        return code == 0
     }
 }

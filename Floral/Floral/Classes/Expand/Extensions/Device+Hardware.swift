@@ -61,6 +61,13 @@ extension Device {
     public static var deviceSystemVersion: String {
         return UIDevice.current.systemVersion
     }
+    
+    /// App版本
+    public static var appVersion: String {
+        guard let dict = Bundle.main.infoDictionary else { return "unknown" }
+        guard let version = dict["CFBundleShortVersionString"] as? String else { return "unknown" }
+        return version
+    }
 }
 
 extension Device {

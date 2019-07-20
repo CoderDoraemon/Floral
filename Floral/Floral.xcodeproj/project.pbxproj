@@ -75,8 +75,22 @@
 		1806CA2622E0783D006B9EE6 /* RecommendApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806CA2522E0783D006B9EE6 /* RecommendApi.swift */; };
 		1806CA2822E07879006B9EE6 /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806CA2722E07879006B9EE6 /* BaseApi.swift */; };
 		1806CA2A22E07936006B9EE6 /* URLConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806CA2922E07936006B9EE6 /* URLConst.swift */; };
-		180A44FF22DFFDE500AC6800 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 180A44FB22DFFDE500AC6800 /* Info.plist */; };
 		180A450022DFFDE500AC6800 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A44FE22DFFDE500AC6800 /* AppDelegate.swift */; };
+		185872E922E2AADC00007AF8 /* UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185872E822E2AADC00007AF8 /* UUID.swift */; };
+		185872EE22E2B93000007AF8 /* ScratchableLatexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185872ED22E2B93000007AF8 /* ScratchableLatexView.swift */; };
+		185872F022E2B9BD00007AF8 /* LDRecommendItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185872EF22E2B9BD00007AF8 /* LDRecommendItem.swift */; };
+		185872F422E2D93100007AF8 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185872F322E2D93100007AF8 /* UIButton+Extension.swift */; };
+		185872F622E2E34100007AF8 /* LDRecommendReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185872F522E2E34100007AF8 /* LDRecommendReusableView.swift */; };
+		185872F822E2E47300007AF8 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185872F722E2E47300007AF8 /* UIImageView+Extension.swift */; };
+		185872FD22E2FDB700007AF8 /* LDRecommendBannerReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185872FC22E2FDB700007AF8 /* LDRecommendBannerReusableView.swift */; };
+		1858730422E2FF8900007AF8 /* ZCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858730022E2FF8900007AF8 /* ZCycleView.swift */; };
+		1858730522E2FF8900007AF8 /* ZCycleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858730122E2FF8900007AF8 /* ZCycleViewCell.swift */; };
+		1858730622E2FF8900007AF8 /* ZCycleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858730222E2FF8900007AF8 /* ZCycleLayout.swift */; };
+		1858730722E2FF8900007AF8 /* ZPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858730322E2FF8900007AF8 /* ZPageControl.swift */; };
+		18CC64F322E163DB001467ED /* LDRecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC64F222E163DB001467ED /* LDRecommendModel.swift */; };
+		18CC64F522E193AA001467ED /* LDRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC64F422E193AA001467ED /* LDRecommendCell.swift */; };
+		18CC64F922E198EF001467ED /* Request+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC64F822E198EF001467ED /* Request+Codable.swift */; };
+		18CC64FB22E1B995001467ED /* NewsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC64FA22E1B995001467ED /* NewsApi.swift */; };
 		18FECEB822CDD67D00F95794 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18FECEB722CDD67D00F95794 /* Assets.xcassets */; };
 		18FECEC622CDD67D00F95794 /* FloralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FECEC522CDD67D00F95794 /* FloralTests.swift */; };
 		18FECED122CDD67D00F95794 /* FloralUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FECED022CDD67D00F95794 /* FloralUITests.swift */; };
@@ -176,6 +190,21 @@
 		1806CA2922E07936006B9EE6 /* URLConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConst.swift; sourceTree = "<group>"; };
 		180A44FB22DFFDE500AC6800 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180A44FE22DFFDE500AC6800 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		185872E822E2AADC00007AF8 /* UUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUID.swift; sourceTree = "<group>"; };
+		185872ED22E2B93000007AF8 /* ScratchableLatexView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScratchableLatexView.swift; sourceTree = "<group>"; };
+		185872EF22E2B9BD00007AF8 /* LDRecommendItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDRecommendItem.swift; sourceTree = "<group>"; };
+		185872F322E2D93100007AF8 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		185872F522E2E34100007AF8 /* LDRecommendReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDRecommendReusableView.swift; sourceTree = "<group>"; };
+		185872F722E2E47300007AF8 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		185872FC22E2FDB700007AF8 /* LDRecommendBannerReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDRecommendBannerReusableView.swift; sourceTree = "<group>"; };
+		1858730022E2FF8900007AF8 /* ZCycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZCycleView.swift; sourceTree = "<group>"; };
+		1858730122E2FF8900007AF8 /* ZCycleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZCycleViewCell.swift; sourceTree = "<group>"; };
+		1858730222E2FF8900007AF8 /* ZCycleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZCycleLayout.swift; sourceTree = "<group>"; };
+		1858730322E2FF8900007AF8 /* ZPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPageControl.swift; sourceTree = "<group>"; };
+		18CC64F222E163DB001467ED /* LDRecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDRecommendModel.swift; sourceTree = "<group>"; };
+		18CC64F422E193AA001467ED /* LDRecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDRecommendCell.swift; sourceTree = "<group>"; };
+		18CC64F822E198EF001467ED /* Request+Codable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+Codable.swift"; sourceTree = "<group>"; };
+		18CC64FA22E1B995001467ED /* NewsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsApi.swift; sourceTree = "<group>"; };
 		18FECEAD22CDD67C00F95794 /* Floral.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Floral.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FECEB722CDD67D00F95794 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18FECEC122CDD67D00F95794 /* FloralTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FloralTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -358,6 +387,7 @@
 		1806C96D22E01626006B9EE6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18CC64F222E163DB001467ED /* LDRecommendModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -365,6 +395,10 @@
 		1806C96E22E01626006B9EE6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18CC64F422E193AA001467ED /* LDRecommendCell.swift */,
+				185872EF22E2B9BD00007AF8 /* LDRecommendItem.swift */,
+				185872F522E2E34100007AF8 /* LDRecommendReusableView.swift */,
+				185872FC22E2FDB700007AF8 /* LDRecommendBannerReusableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -494,6 +528,7 @@
 		1806C97E22E01626006B9EE6 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				18CC64FA22E1B995001467ED /* NewsApi.swift */,
 				1806CA2522E0783D006B9EE6 /* RecommendApi.swift */,
 				1806CA2722E07879006B9EE6 /* BaseApi.swift */,
 			);
@@ -577,6 +612,7 @@
 		1806C98622E01626006B9EE6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				185872E722E2AAC800007AF8 /* UUID */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -617,6 +653,8 @@
 		1806C98A22E01626006B9EE6 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				185872FE22E2FE1B00007AF8 /* CycleScrollView */,
+				185872EC22E2B93000007AF8 /* ScratchableLatexView */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -624,6 +662,7 @@
 		1806C98B22E01626006B9EE6 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				185872FF22E2FF8900007AF8 /* ZCycleView */,
 				1806C9C622E0247D006B9EE6 /* FDFullscreenPopGesture */,
 				1806C9BA22E01CD7006B9EE6 /* RxErrorTracker */,
 				1806C9B622E01CD7006B9EE6 /* RxMJ */,
@@ -640,6 +679,8 @@
 				1806C9FF22E052C4006B9EE6 /* UIScrollView+MJRefresh.swift */,
 				1806CA0122E05B68006B9EE6 /* UIImage+Extension.swift */,
 				1806CA1122E06727006B9EE6 /* UIFont+Extension.swift */,
+				185872F322E2D93100007AF8 /* UIButton+Extension.swift */,
+				185872F722E2E47300007AF8 /* UIImageView+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -730,6 +771,7 @@
 				1806CA1D22E0746C006B9EE6 /* ObservableType+Codable.swift */,
 				1806CA1F22E07479006B9EE6 /* Single+Codable.swift */,
 				1806CA2122E07485006B9EE6 /* Response+Codable.swift */,
+				18CC64F822E198EF001467ED /* Request+Codable.swift */,
 			);
 			path = Codable;
 			sourceTree = "<group>";
@@ -774,6 +816,40 @@
 				1806C9DA22E040A7006B9EE6 /* ImportFile.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		185872E722E2AAC800007AF8 /* UUID */ = {
+			isa = PBXGroup;
+			children = (
+				185872E822E2AADC00007AF8 /* UUID.swift */,
+			);
+			path = UUID;
+			sourceTree = "<group>";
+		};
+		185872EC22E2B93000007AF8 /* ScratchableLatexView */ = {
+			isa = PBXGroup;
+			children = (
+				185872ED22E2B93000007AF8 /* ScratchableLatexView.swift */,
+			);
+			path = ScratchableLatexView;
+			sourceTree = "<group>";
+		};
+		185872FE22E2FE1B00007AF8 /* CycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CycleScrollView;
+			sourceTree = "<group>";
+		};
+		185872FF22E2FF8900007AF8 /* ZCycleView */ = {
+			isa = PBXGroup;
+			children = (
+				1858730022E2FF8900007AF8 /* ZCycleView.swift */,
+				1858730122E2FF8900007AF8 /* ZCycleViewCell.swift */,
+				1858730222E2FF8900007AF8 /* ZCycleLayout.swift */,
+				1858730322E2FF8900007AF8 /* ZPageControl.swift */,
+			);
+			path = ZCycleView;
 			sourceTree = "<group>";
 		};
 		18FECEA422CDD67C00F95794 = {
@@ -945,7 +1021,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				180A44FF22DFFDE500AC6800 /* Info.plist in Resources */,
 				18FECEB822CDD67D00F95794 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1064,10 +1139,13 @@
 				1806CA1722E07108006B9EE6 /* LDRecommendController.swift in Sources */,
 				1806C9F222E04929006B9EE6 /* UITextField+Rx.swift in Sources */,
 				1806C9C122E01E77006B9EE6 /* TabBarController.swift in Sources */,
+				18CC64FB22E1B995001467ED /* NewsApi.swift in Sources */,
 				1806C9F122E04929006B9EE6 /* UIScrollView+Rx.swift in Sources */,
 				1806C9AD22E0182D006B9EE6 /* AppEnum.swift in Sources */,
 				1806C9D722E03E6B006B9EE6 /* LDSharedController.swift in Sources */,
 				1806C98F22E0165F006B9EE6 /* CollectionViewController.swift in Sources */,
+				185872F622E2E34100007AF8 /* LDRecommendReusableView.swift in Sources */,
+				1858730722E2FF8900007AF8 /* ZPageControl.swift in Sources */,
 				1806C9B522E01AFC006B9EE6 /* LDCollegeController.swift in Sources */,
 				1806C99722E016C9006B9EE6 /* CollectionReusableView.swift in Sources */,
 				1806C9BF22E01CD7006B9EE6 /* ErrorTracker.swift in Sources */,
@@ -1082,10 +1160,13 @@
 				1806C9E022E04379006B9EE6 /* UIView+Extension.swift in Sources */,
 				1806CA2A22E07936006B9EE6 /* URLConst.swift in Sources */,
 				1806CA0822E05E74006B9EE6 /* NibLoadProtocol.swift in Sources */,
+				1858730522E2FF8900007AF8 /* ZCycleViewCell.swift in Sources */,
 				1806CA1E22E0746C006B9EE6 /* ObservableType+Codable.swift in Sources */,
 				1806C9DE22E04220006B9EE6 /* Observable+Extension.swift in Sources */,
 				1806CA0C22E05F12006B9EE6 /* UITableView+Extension.swift in Sources */,
+				185872E922E2AADC00007AF8 /* UUID.swift in Sources */,
 				1806CA2022E07479006B9EE6 /* Single+Codable.swift in Sources */,
+				185872F822E2E47300007AF8 /* UIImageView+Extension.swift in Sources */,
 				1806C99322E01695006B9EE6 /* TableView.swift in Sources */,
 				1806CA1022E06692006B9EE6 /* AppMacro.swift in Sources */,
 				1806C99522E016A9006B9EE6 /* CollectionView.swift in Sources */,
@@ -1096,21 +1177,28 @@
 				1806C9C322E01E88006B9EE6 /* NavigationController.swift in Sources */,
 				1806C9D322E03E4F006B9EE6 /* LDCommunityController.swift in Sources */,
 				1806C9B322E019B3006B9EE6 /* String+Extension.swift in Sources */,
+				1858730422E2FF8900007AF8 /* ZCycleView.swift in Sources */,
 				1806C9BC22E01CD7006B9EE6 /* MJRefreshComponent+Rx.swift in Sources */,
+				18CC64F522E193AA001467ED /* LDRecommendCell.swift in Sources */,
 				1806C98D22E01651006B9EE6 /* ViewController.swift in Sources */,
 				1806C9FB22E051D1006B9EE6 /* UICollectionView+Rx.swift in Sources */,
+				185872EE22E2B93000007AF8 /* ScratchableLatexView.swift in Sources */,
 				1806CA1922E0716B006B9EE6 /* LDRecommendVM.swift in Sources */,
 				1806CA0422E05DE2006B9EE6 /* ViewModelProtocol.swift in Sources */,
 				1806C9F922E04929006B9EE6 /* RxTextFieldDelegateProxy.swift in Sources */,
+				185872FD22E2FDB700007AF8 /* LDRecommendBannerReusableView.swift in Sources */,
 				1806C9BE22E01CD7006B9EE6 /* MJRefreshFooter+Rx.swift in Sources */,
 				180A450022DFFDE500AC6800 /* AppDelegate.swift in Sources */,
+				18CC64F322E163DB001467ED /* LDRecommendModel.swift in Sources */,
 				1806C9BD22E01CD7006B9EE6 /* MJRefreshHeader+Rx.swift in Sources */,
 				1806CA0022E052C4006B9EE6 /* UIScrollView+MJRefresh.swift in Sources */,
 				1806CA2422E0778C006B9EE6 /* LightError.swift in Sources */,
 				1806C99122E0166E006B9EE6 /* TableViewController.swift in Sources */,
 				1806C9F422E04929006B9EE6 /* IndexPath+Rx.swift in Sources */,
 				1806C9A122E0171F006B9EE6 /* CollectionViewCell.swift in Sources */,
+				18CC64F922E198EF001467ED /* Request+Codable.swift in Sources */,
 				1806CA0622E05E0C006B9EE6 /* RefreshProtocol.swift in Sources */,
+				1858730622E2FF8900007AF8 /* ZCycleLayout.swift in Sources */,
 				1806C99922E016E3006B9EE6 /* Button.swift in Sources */,
 				1806C99F22E01712006B9EE6 /* TableViewCell.swift in Sources */,
 				1806C9D522E03E5D006B9EE6 /* LDMineController.swift in Sources */,
@@ -1119,6 +1207,8 @@
 				1806C9A322E0172D006B9EE6 /* View.swift in Sources */,
 				1806CA2622E0783D006B9EE6 /* RecommendApi.swift in Sources */,
 				1806C9F722E04929006B9EE6 /* UIViewController+Rx.swift in Sources */,
+				185872F422E2D93100007AF8 /* UIButton+Extension.swift in Sources */,
+				185872F022E2B9BD00007AF8 /* LDRecommendItem.swift in Sources */,
 				1806CA1422E067A3006B9EE6 /* Device+Hardware.swift in Sources */,
 				1806C9AB22E0181F006B9EE6 /* AppConfigs.swift in Sources */,
 				1806CA2822E07879006B9EE6 /* BaseApi.swift in Sources */,

@@ -14,7 +14,7 @@ extension UIFont {
     ///
     /// - Parameter at: 6S下字号
     /// - Returns: 系统字体大小
-    func fontSize(_ at: CGFloat) -> UIFont {
+    static func autoFontSize(_ at: CGFloat) -> UIFont {
         return UIFont.systemFont(ofSize: autoDistance(at))
     }
     
@@ -22,7 +22,7 @@ extension UIFont {
     ///
     /// - Parameter at: 6S下字号
     /// - Returns: 粗体字体大小
-    func boldFontSize(_ at: CGFloat) -> UIFont {
+    static func autoFontBoldSize(_ at: CGFloat) -> UIFont {
         return UIFont.boldSystemFont(ofSize: autoDistance(at))
     }
 }

@@ -58,7 +58,10 @@ def common_Pods
   pod 'LYEmptyView'
   # 标签🏷
   pod 'TTGTagCollectionView'
+  # 分页器
   pod 'WMPageController'
+  # 标签🏷
+  pod 'TYCyclePagerView'
   
 end
 

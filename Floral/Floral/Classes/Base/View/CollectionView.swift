@@ -21,7 +21,7 @@ class CollectionView: UICollectionView {
     }
     
     func setupUI() {
-        
+        backgroundColor = UIColor.white
     }
     
 }

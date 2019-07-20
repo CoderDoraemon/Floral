@@ -29,7 +29,7 @@ extension RecommendApi: TargetType {
         case .portalList:
             return "cactus/researchCommunity/v2/portal"
         case .categoryList(_):
-            return "cactus/researchCommunity/v2/category?index=0"
+            return "cactus/researchCommunity/v2/category"
         }
     }
     
@@ -47,13 +47,15 @@ extension RecommendApi: TargetType {
         switch self {
         case .bannerList(let city):
             parameters["city"] = city
+            break
         case .portalList:
             break
         case .categoryList(let page):
             parameters["index"] = page
+            break
         }
         
-        return .requestParameters(parameters: parameters, encoding: URLEncoding.httpBody)
+        return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
     }
     
 }

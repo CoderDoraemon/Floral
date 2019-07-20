@@ -93,3 +93,20 @@ public extension String {
         return classType.init()
     }
 }
+
+public extension String {
+    
+    /// 转URL
+    ///
+    /// - Returns: URL
+    func toUrl() -> URL? {
+        
+        /// 加码
+        let newString = self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        
+        guard let result = URL(string: newString) else { return nil }
+        
+        return result
+    }
+    
+}

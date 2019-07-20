@@ -70,6 +70,7 @@ typealias StringParameterBlock = ((String)->())
 let emptyUrl: URL = URL(string: "https://")!
 
 
+let Margin_Left = autoDistance(15)
 
 
 

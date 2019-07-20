@@ -25,9 +25,9 @@ public extension Response {
         
         let response = try mapObject(Model<T>.self, atKeyPath: nil, using: decoder)
         if response.success {
-            return response.result
+            return response.data
         }
-        throw LightError(code: response.errorCode, reason: response.errorMessage)
+        throw LightError(code: response.code, reason: response.text)
     }
 }
 

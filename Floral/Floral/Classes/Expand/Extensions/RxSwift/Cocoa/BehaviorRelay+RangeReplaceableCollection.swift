@@ -10,6 +10,23 @@ import RxCocoa
 
 public extension BehaviorRelay where Element: RangeReplaceableCollection {
     
+    var append: AnyObserver<Element> {
+        
+        return AnyObserver { [weak self] event in
+            
+            guard let self = self else { return }
+            
+            switch event {
+            case .next(let data):
+                self.accept(self.value + data)
+            case .error(let error):
+                print("Data Task Error: \(error)")
+            default:
+                break
+            }
+        }
+    }
+    
     func append(_ newElement: Element.Element) {
         var value = self.value
         value.append(newElement)

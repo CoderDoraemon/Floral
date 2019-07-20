@@ -13,6 +13,6 @@ class URLConst {
     static let shared = URLConst()
     
     var baseUrl: String {
-        return "http://api.htxq.net/"
+        return "http://api.htxq.net"
     }
 }
