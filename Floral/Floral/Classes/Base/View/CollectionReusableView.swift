@@ -26,5 +26,5 @@ class CollectionReusableView: UICollectionReusableView {
     
     /// 布局
     func setupConstraints() {}
-        
+    
 }

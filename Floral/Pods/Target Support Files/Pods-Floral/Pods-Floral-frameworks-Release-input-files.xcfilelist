@@ -28,6 +28,7 @@ ${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
 ${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
 ${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework
 ${BUILT_PRODUCTS_DIR}/RxURLNavigator/RxURLNavigator.framework
+${BUILT_PRODUCTS_DIR}/SPPermission/SPPermission.framework
 ${BUILT_PRODUCTS_DIR}/SQLiteRepairKit/sqliterk.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
 ${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework
@@ -35,6 +36,7 @@ ${BUILT_PRODUCTS_DIR}/SwiftNotificationCenter/SwiftNotificationCenter.framework
 ${BUILT_PRODUCTS_DIR}/SwiftTheme/SwiftTheme.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyAttributes/SwiftyAttributes.framework
 ${BUILT_PRODUCTS_DIR}/TTGTagCollectionView/TTGTagCollectionView.framework
+${BUILT_PRODUCTS_DIR}/TYCyclePagerView/TYCyclePagerView.framework
 ${BUILT_PRODUCTS_DIR}/Then/Then.framework
 ${BUILT_PRODUCTS_DIR}/Tiercel/Tiercel.framework
 ${BUILT_PRODUCTS_DIR}/URLNavigator/URLNavigator.framework

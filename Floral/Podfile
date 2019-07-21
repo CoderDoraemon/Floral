@@ -51,6 +51,7 @@ def common_Pods
   pod 'NVActivityIndicatorView'
   pod 'RxSwiftExt'
   pod 'Hue'
+  pod 'SPPermission/Location'
   
   # 拉刷新控件
   pod 'MJRefresh'

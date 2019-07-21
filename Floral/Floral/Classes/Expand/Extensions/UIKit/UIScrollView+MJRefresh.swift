@@ -25,7 +25,16 @@ extension UIScrollView {
     }
 }
 
-public class RefreshHeader: MJRefreshGifHeader {
+public class RefreshGifHeader: MJRefreshGifHeader {
+    
+    /// 初始化
+    override public func prepare() {
+        super.prepare()
+        
+    }
+}
+
+public class RefreshNormalHeader: MJRefreshNormalHeader {
     
     /// 初始化
     override public func prepare() {

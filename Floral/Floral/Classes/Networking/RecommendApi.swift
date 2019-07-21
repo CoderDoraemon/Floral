@@ -15,8 +15,10 @@ enum RecommendApi {
     case bannerList(city: String)
     /// 限时、最新
     case portalList
-    /// 限时、最新
+    /// 分类列表
     case categoryList(page: Int)
+    /// 分类更多列表
+    case categoryMoreList(page: Int, type: Int)
 }
 
 extension RecommendApi: TargetType {
@@ -30,6 +32,8 @@ extension RecommendApi: TargetType {
             return "cactus/researchCommunity/v2/portal"
         case .categoryList(_):
             return "cactus/researchCommunity/v2/category"
+        case .categoryMoreList(_, _):
+            return "cactus/researchCommunity/getResearchCommunityByType"
         }
     }
     
@@ -47,12 +51,13 @@ extension RecommendApi: TargetType {
         switch self {
         case .bannerList(let city):
             parameters["city"] = city
-            break
         case .portalList:
             break
         case .categoryList(let page):
             parameters["index"] = page
-            break
+        case .categoryMoreList(let page, let type):
+            parameters["pageIndex"] = page
+            parameters["typeId"] = type
         }
         
         return .requestParameters(parameters: parameters, encoding: URLEncoding.default)

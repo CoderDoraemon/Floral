@@ -25,22 +25,5 @@ extension AppDelegate {
         
         Network.Configuration.default.timeoutInterval = 20
         Network.Configuration.default.plugins = [networkLoggerPlugin, networkPlugin]
-        
-//        Network.Configuration.default.replacingTask = { target in
-//            
-//            switch target.task {
-//            case let .requestParameters(parameters, encoding):
-//                
-//                let params: [String: Any] = [
-//                    "os": "iOS",
-//                    "app": "GSApp",
-//                    "appVersion": "3.7.4",
-//                    "request": parameters
-//                ]
-//                return .requestParameters(parameters: params, encoding: encoding)
-//            default:
-//                return target.task
-//            }
-//        }
     }
 }

@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import RxCocoa
 import EmptyDataSet_Swift
 import RxReachability
 import Reachability
 
 class ViewController<VM: ViewModel>: UIViewController {
+    
+    /// 标题
+    let navigationTitle = BehaviorRelay<String?>(value: nil)
     
     lazy var viewModel: VM = {
         
@@ -69,6 +73,8 @@ class ViewController<VM: ViewModel>: UIViewController {
         
         setupUI()
         bindVM()
+        
+        navigationTitle.bind(to: navigationItem.rx.title).disposed(by: rx.disposeBag)
     }
     
     // MARK: - deinit

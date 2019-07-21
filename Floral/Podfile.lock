@@ -66,6 +66,9 @@ PODS:
     - RxSwift (~> 5.0)
     - URLNavigator
   - SnapKit (5.0.0)
+  - SPPermission/Core (4.0.5)
+  - SPPermission/Location (4.0.5):
+    - SPPermission/Core
   - SQLiteRepairKit (1.2.2):
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - SwiftDate (6.0.3)
@@ -75,6 +78,7 @@ PODS:
   - Then (2.5.0)
   - Tiercel (2.3.0)
   - TTGTagCollectionView (1.11.1)
+  - TYCyclePagerView (1.2.0)
   - URLNavigator (2.2.0)
   - WCDB.swift (1.0.8.2):
     - SQLiteRepairKit (~> 1.2.0)
@@ -105,6 +109,7 @@ DEPENDENCIES:
   - RxSwiftExt
   - RxURLNavigator
   - SnapKit
+  - SPPermission/Location
   - SwiftDate
   - SwiftNotificationCenter
   - SwiftTheme
@@ -112,6 +117,7 @@ DEPENDENCIES:
   - Then
   - Tiercel
   - TTGTagCollectionView
+  - TYCyclePagerView
   - WCDB.swift
   - WMPageController
 
@@ -147,6 +153,7 @@ SPEC REPOS:
     - RxSwiftExt
     - RxURLNavigator
     - SnapKit
+    - SPPermission
     - SQLiteRepairKit
     - SwiftDate
     - SwiftNotificationCenter
@@ -155,6 +162,7 @@ SPEC REPOS:
     - Then
     - Tiercel
     - TTGTagCollectionView
+    - TYCyclePagerView
     - URLNavigator
     - WCDB.swift
     - WCDBOptimizedSQLCipher
@@ -191,6 +199,7 @@ SPEC CHECKSUMS:
   RxSwiftExt: 4564187392cc53823ef241fa4a11647861567026
   RxURLNavigator: 0f572321e73d71b4e7b483238be138a800023475
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
+  SPPermission: ef54994522bdf471ce1fe6aea267bf471a9de701
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   SwiftDate: 8d4f14bf1ef68e95094511504856547bf9e3e1a6
   SwiftNotificationCenter: 760386da2ce03d3594cb5e96d1e22ec80b44b46f
@@ -199,11 +208,12 @@ SPEC CHECKSUMS:
   Then: 0157115e883545c77967b452fe74a1d25fb796e1
   Tiercel: 87c75f90ec3152ee2a278591b41f606b383af2af
   TTGTagCollectionView: 86fcbfa6a7493c9e860b01c2e693cffc8acf6de1
+  TYCyclePagerView: 2b051dade0615c70784aa34f40c646feeddb7344
   URLNavigator: 0bffc3efdeb2d97f7b5eec7ac82d290f4a099431
   WCDB.swift: 05d509d7a0e60fb6e11c34eb7e4027c0fab5849f
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
 
-PODFILE CHECKSUM: 409d288d5fe4ec6794beebf3a92a23486b6ee618
+PODFILE CHECKSUM: bb583ebd47108f696a0e17f67927aaa4a370b187
 
-COCOAPODS: 1.7.4
+COCOAPODS: 1.7.5

@@ -29,10 +29,6 @@ extension TargetType {
             "client-terminal" : Device.machineModelName,
             "client-platform" : Device.deviceSystemVersion,
             "client-unique" : UUID().uuidString(style: .canonical)
-//            "User-Agent" : "Floral_2/201907150001 CFNetwork/808.2.16 Darwin/16.3.0"
-//            "Cookie" : "mobile=13135862013; user=40fdf6d5-e6a8-4b7a-9991-2d766dcaeffe"
-//            "Connection" : "keep-alive",
-//            "client-app" : "htxq-yjs"
         ]
     }
     

@@ -78,7 +78,6 @@
 		180A450022DFFDE500AC6800 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A44FE22DFFDE500AC6800 /* AppDelegate.swift */; };
 		185872E922E2AADC00007AF8 /* UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185872E822E2AADC00007AF8 /* UUID.swift */; };
 		185872EE22E2B93000007AF8 /* ScratchableLatexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185872ED22E2B93000007AF8 /* ScratchableLatexView.swift */; };
-		185872F022E2B9BD00007AF8 /* LDRecommendItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185872EF22E2B9BD00007AF8 /* LDRecommendItem.swift */; };
 		185872F422E2D93100007AF8 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185872F322E2D93100007AF8 /* UIButton+Extension.swift */; };
 		185872F622E2E34100007AF8 /* LDRecommendReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185872F522E2E34100007AF8 /* LDRecommendReusableView.swift */; };
 		185872F822E2E47300007AF8 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185872F722E2E47300007AF8 /* UIImageView+Extension.swift */; };
@@ -90,11 +89,14 @@
 		18CC64F322E163DB001467ED /* LDRecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC64F222E163DB001467ED /* LDRecommendModel.swift */; };
 		18CC64F522E193AA001467ED /* LDRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC64F422E193AA001467ED /* LDRecommendCell.swift */; };
 		18CC64F922E198EF001467ED /* Request+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC64F822E198EF001467ED /* Request+Codable.swift */; };
-		18CC64FB22E1B995001467ED /* NewsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC64FA22E1B995001467ED /* NewsApi.swift */; };
 		18FECEB822CDD67D00F95794 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18FECEB722CDD67D00F95794 /* Assets.xcassets */; };
 		18FECEC622CDD67D00F95794 /* FloralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FECEC522CDD67D00F95794 /* FloralTests.swift */; };
 		18FECED122CDD67D00F95794 /* FloralUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FECED022CDD67D00F95794 /* FloralUITests.swift */; };
 		A1A7BB394C693E57B455870B /* Pods_FloralTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4922BC1F2B2E1A16B78071A /* Pods_FloralTests.framework */; };
+		A7BB152A22E40A18003AB22C /* LDRecommendMoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB152922E40A18003AB22C /* LDRecommendMoreController.swift */; };
+		A7BB152C22E40A3E003AB22C /* LDRecommendMoreVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB152B22E40A3E003AB22C /* LDRecommendMoreVM.swift */; };
+		A7BB153022E428E0003AB22C /* LDCollegeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB152F22E428E0003AB22C /* LDCollegeVM.swift */; };
+		A7BB153222E42F5D003AB22C /* CollegeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB153122E42F5D003AB22C /* CollegeApi.swift */; };
 		C5CEB4B867A12D9FB96E622A /* Pods_FloralUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5BA1C585C95C448EA4ACA6 /* Pods_FloralUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -192,7 +194,6 @@
 		180A44FE22DFFDE500AC6800 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		185872E822E2AADC00007AF8 /* UUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUID.swift; sourceTree = "<group>"; };
 		185872ED22E2B93000007AF8 /* ScratchableLatexView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScratchableLatexView.swift; sourceTree = "<group>"; };
-		185872EF22E2B9BD00007AF8 /* LDRecommendItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDRecommendItem.swift; sourceTree = "<group>"; };
 		185872F322E2D93100007AF8 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		185872F522E2E34100007AF8 /* LDRecommendReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDRecommendReusableView.swift; sourceTree = "<group>"; };
 		185872F722E2E47300007AF8 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -204,7 +205,6 @@
 		18CC64F222E163DB001467ED /* LDRecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDRecommendModel.swift; sourceTree = "<group>"; };
 		18CC64F422E193AA001467ED /* LDRecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDRecommendCell.swift; sourceTree = "<group>"; };
 		18CC64F822E198EF001467ED /* Request+Codable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+Codable.swift"; sourceTree = "<group>"; };
-		18CC64FA22E1B995001467ED /* NewsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsApi.swift; sourceTree = "<group>"; };
 		18FECEAD22CDD67C00F95794 /* Floral.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Floral.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FECEB722CDD67D00F95794 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18FECEC122CDD67D00F95794 /* FloralTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FloralTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +216,10 @@
 		3403AC69B32B9A6C45E0A519 /* Pods-FloralUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloralUITests.debug.xcconfig"; path = "Target Support Files/Pods-FloralUITests/Pods-FloralUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		630B8876179926E3F272B9E9 /* Pods-FloralTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloralTests.release.xcconfig"; path = "Target Support Files/Pods-FloralTests/Pods-FloralTests.release.xcconfig"; sourceTree = "<group>"; };
 		7A5BA1C585C95C448EA4ACA6 /* Pods_FloralUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FloralUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7BB152922E40A18003AB22C /* LDRecommendMoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDRecommendMoreController.swift; sourceTree = "<group>"; };
+		A7BB152B22E40A3E003AB22C /* LDRecommendMoreVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDRecommendMoreVM.swift; sourceTree = "<group>"; };
+		A7BB152F22E428E0003AB22C /* LDCollegeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDCollegeVM.swift; sourceTree = "<group>"; };
+		A7BB153122E42F5D003AB22C /* CollegeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeApi.swift; sourceTree = "<group>"; };
 		CD37EB6A74BF418BAEFC6629 /* Pods-Floral.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Floral.release.xcconfig"; path = "Target Support Files/Pods-Floral/Pods-Floral.release.xcconfig"; sourceTree = "<group>"; };
 		D4922BC1F2B2E1A16B78071A /* Pods_FloralTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FloralTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E82B85F10DEF6EB37EF4F941 /* Pods_Floral.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Floral.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -267,16 +271,16 @@
 			isa = PBXGroup;
 			children = (
 				1806C96F22E01626006B9EE6 /* Main */,
-				1806C96522E01626006B9EE6 /* Mine */,
-				1806C96022E01626006B9EE6 /* Shared */,
-				1806C96A22E01626006B9EE6 /* Community */,
-				1806C97422E01626006B9EE6 /* College */,
-				1806C97922E01626006B9EE6 /* Material */,
+				1806C96522E01626006B9EE6 /* Mine(我的) */,
+				1806C96022E01626006B9EE6 /* Shared(分享会) */,
+				1806C96A22E01626006B9EE6 /* Community(研究院) */,
+				1806C97422E01626006B9EE6 /* College(学院) */,
+				1806C97922E01626006B9EE6 /* Material(素材) */,
 			);
 			path = Module;
 			sourceTree = "<group>";
 		};
-		1806C96022E01626006B9EE6 /* Shared */ = {
+		1806C96022E01626006B9EE6 /* Shared(分享会) */ = {
 			isa = PBXGroup;
 			children = (
 				1806C96122E01626006B9EE6 /* ViewModel */,
@@ -284,7 +288,7 @@
 				1806C96322E01626006B9EE6 /* Model */,
 				1806C96422E01626006B9EE6 /* View */,
 			);
-			path = Shared;
+			path = "Shared(分享会)";
 			sourceTree = "<group>";
 		};
 		1806C96122E01626006B9EE6 /* ViewModel */ = {
@@ -316,7 +320,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		1806C96522E01626006B9EE6 /* Mine */ = {
+		1806C96522E01626006B9EE6 /* Mine(我的) */ = {
 			isa = PBXGroup;
 			children = (
 				1806C96622E01626006B9EE6 /* ViewModel */,
@@ -324,7 +328,7 @@
 				1806C96822E01626006B9EE6 /* Model */,
 				1806C96922E01626006B9EE6 /* View */,
 			);
-			path = Mine;
+			path = "Mine(我的)";
 			sourceTree = "<group>";
 		};
 		1806C96622E01626006B9EE6 /* ViewModel */ = {
@@ -356,7 +360,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		1806C96A22E01626006B9EE6 /* Community */ = {
+		1806C96A22E01626006B9EE6 /* Community(研究院) */ = {
 			isa = PBXGroup;
 			children = (
 				1806C96B22E01626006B9EE6 /* ViewModel */,
@@ -364,12 +368,13 @@
 				1806C96D22E01626006B9EE6 /* Model */,
 				1806C96E22E01626006B9EE6 /* View */,
 			);
-			path = Community;
+			path = "Community(研究院)";
 			sourceTree = "<group>";
 		};
 		1806C96B22E01626006B9EE6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A7BB152B22E40A3E003AB22C /* LDRecommendMoreVM.swift */,
 				1806CA1822E0716B006B9EE6 /* LDRecommendVM.swift */,
 			);
 			path = ViewModel;
@@ -396,7 +401,6 @@
 			isa = PBXGroup;
 			children = (
 				18CC64F422E193AA001467ED /* LDRecommendCell.swift */,
-				185872EF22E2B9BD00007AF8 /* LDRecommendItem.swift */,
 				185872F522E2E34100007AF8 /* LDRecommendReusableView.swift */,
 				185872FC22E2FDB700007AF8 /* LDRecommendBannerReusableView.swift */,
 			);
@@ -445,7 +449,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		1806C97422E01626006B9EE6 /* College */ = {
+		1806C97422E01626006B9EE6 /* College(学院) */ = {
 			isa = PBXGroup;
 			children = (
 				1806C97522E01626006B9EE6 /* ViewModel */,
@@ -453,12 +457,13 @@
 				1806C97722E01626006B9EE6 /* Model */,
 				1806C97822E01626006B9EE6 /* View */,
 			);
-			path = College;
+			path = "College(学院)";
 			sourceTree = "<group>";
 		};
 		1806C97522E01626006B9EE6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A7BB152F22E428E0003AB22C /* LDCollegeVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -485,7 +490,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		1806C97922E01626006B9EE6 /* Material */ = {
+		1806C97922E01626006B9EE6 /* Material(素材) */ = {
 			isa = PBXGroup;
 			children = (
 				1806C97A22E01626006B9EE6 /* ViewModel */,
@@ -493,7 +498,7 @@
 				1806C97C22E01626006B9EE6 /* Model */,
 				1806C97D22E01626006B9EE6 /* View */,
 			);
-			path = Material;
+			path = "Material(素材)";
 			sourceTree = "<group>";
 		};
 		1806C97A22E01626006B9EE6 /* ViewModel */ = {
@@ -528,9 +533,9 @@
 		1806C97E22E01626006B9EE6 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				18CC64FA22E1B995001467ED /* NewsApi.swift */,
 				1806CA2522E0783D006B9EE6 /* RecommendApi.swift */,
 				1806CA2722E07879006B9EE6 /* BaseApi.swift */,
+				A7BB153122E42F5D003AB22C /* CollegeApi.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -752,6 +757,7 @@
 			isa = PBXGroup;
 			children = (
 				1806CA1622E07108006B9EE6 /* LDRecommendController.swift */,
+				A7BB152922E40A18003AB22C /* LDRecommendMoreController.swift */,
 			);
 			path = ChildVc;
 			sourceTree = "<group>";
@@ -1139,7 +1145,6 @@
 				1806CA1722E07108006B9EE6 /* LDRecommendController.swift in Sources */,
 				1806C9F222E04929006B9EE6 /* UITextField+Rx.swift in Sources */,
 				1806C9C122E01E77006B9EE6 /* TabBarController.swift in Sources */,
-				18CC64FB22E1B995001467ED /* NewsApi.swift in Sources */,
 				1806C9F122E04929006B9EE6 /* UIScrollView+Rx.swift in Sources */,
 				1806C9AD22E0182D006B9EE6 /* AppEnum.swift in Sources */,
 				1806C9D722E03E6B006B9EE6 /* LDSharedController.swift in Sources */,
@@ -1151,11 +1156,14 @@
 				1806C9BF22E01CD7006B9EE6 /* ErrorTracker.swift in Sources */,
 				1806C9F822E04929006B9EE6 /* UITableView+Rx.swift in Sources */,
 				1806C9F522E04929006B9EE6 /* UIResponder+Rx.swift in Sources */,
+				A7BB152A22E40A18003AB22C /* LDRecommendMoreController.swift in Sources */,
 				1806CA0E22E065EF006B9EE6 /* PageViewController.swift in Sources */,
 				1806C9DB22E040A7006B9EE6 /* ImportFile.swift in Sources */,
 				1806C9A922E0175B006B9EE6 /* RefreshViewModel.swift in Sources */,
 				1806CA0222E05B68006B9EE6 /* UIImage+Extension.swift in Sources */,
 				1806CA0B22E05F12006B9EE6 /* UICollectionView+Extension.swift in Sources */,
+				A7BB153022E428E0003AB22C /* LDCollegeVM.swift in Sources */,
+				A7BB153222E42F5D003AB22C /* CollegeApi.swift in Sources */,
 				1806CA2222E07485006B9EE6 /* Response+Codable.swift in Sources */,
 				1806C9E022E04379006B9EE6 /* UIView+Extension.swift in Sources */,
 				1806CA2A22E07936006B9EE6 /* URLConst.swift in Sources */,
@@ -1164,6 +1172,7 @@
 				1806CA1E22E0746C006B9EE6 /* ObservableType+Codable.swift in Sources */,
 				1806C9DE22E04220006B9EE6 /* Observable+Extension.swift in Sources */,
 				1806CA0C22E05F12006B9EE6 /* UITableView+Extension.swift in Sources */,
+				A7BB152C22E40A3E003AB22C /* LDRecommendMoreVM.swift in Sources */,
 				185872E922E2AADC00007AF8 /* UUID.swift in Sources */,
 				1806CA2022E07479006B9EE6 /* Single+Codable.swift in Sources */,
 				185872F822E2E47300007AF8 /* UIImageView+Extension.swift in Sources */,
@@ -1208,7 +1217,6 @@
 				1806CA2622E0783D006B9EE6 /* RecommendApi.swift in Sources */,
 				1806C9F722E04929006B9EE6 /* UIViewController+Rx.swift in Sources */,
 				185872F422E2D93100007AF8 /* UIButton+Extension.swift in Sources */,
-				185872F022E2B9BD00007AF8 /* LDRecommendItem.swift in Sources */,
 				1806CA1422E067A3006B9EE6 /* Device+Hardware.swift in Sources */,
 				1806C9AB22E0181F006B9EE6 /* AppConfigs.swift in Sources */,
 				1806CA2822E07879006B9EE6 /* BaseApi.swift in Sources */,

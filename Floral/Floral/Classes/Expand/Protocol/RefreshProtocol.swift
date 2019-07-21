@@ -58,7 +58,7 @@ extension Refreshable where Self: UIViewController {
     
     func initRefreshHeader(_ scrollView: UIScrollView, _ action: (() -> ())?) -> MJRefreshHeader {
         
-        scrollView.refreshHeader = RefreshHeader(refreshingBlock: { action?() })
+        scrollView.refreshHeader = RefreshNormalHeader(refreshingBlock: { action?() })
         return scrollView.mj_header
     }
     
@@ -73,7 +73,7 @@ extension Refreshable where Self: UIScrollView {
     
     func initRefreshHeader(_ action: (() -> ())?) -> MJRefreshHeader {
         
-        mj_header = RefreshHeader(refreshingBlock: { action?() })
+        mj_header = RefreshNormalHeader(refreshingBlock: { action?() })
         return mj_header
     }
     
