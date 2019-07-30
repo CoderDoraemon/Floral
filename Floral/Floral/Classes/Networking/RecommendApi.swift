@@ -12,13 +12,13 @@ import Moya
 enum RecommendApi {
     
     /// 轮播图
-    case bannerList(city: String)
+    case bannerList
     /// 限时、最新
     case portalList
     /// 分类列表
     case categoryList(page: Int)
     /// 分类更多列表
-    case categoryMoreList(page: Int, type: Int)
+    case categoryMoreList(page: Int, typeId: String)
 }
 
 extension RecommendApi: TargetType {
@@ -26,7 +26,7 @@ extension RecommendApi: TargetType {
     var path: String {
         
         switch self {
-        case .bannerList(_):
+        case .bannerList:
             return "cactus/researchCommunity/getBannerList"
         case .portalList:
             return "cactus/researchCommunity/v2/portal"
@@ -49,15 +49,13 @@ extension RecommendApi: TargetType {
         var parameters: [String: Any] = [:]
         
         switch self {
-        case .bannerList(let city):
-            parameters["city"] = city
-        case .portalList:
+        case .bannerList, .portalList:
             break
         case .categoryList(let page):
             parameters["index"] = page
-        case .categoryMoreList(let page, let type):
+        case .categoryMoreList(let page, let typeId):
             parameters["pageIndex"] = page
-            parameters["typeId"] = type
+            parameters["typeId"] = typeId
         }
         
         return .requestParameters(parameters: parameters, encoding: URLEncoding.default)

@@ -27,7 +27,7 @@ class LDRecommendCell: CollectionViewCell {
         $0.textColor = UIColor.gray
     }
     
-    var model: LDRecommendModel? {
+    var model: CourseModel? {
         didSet {
             guard let model = model else { return }
             

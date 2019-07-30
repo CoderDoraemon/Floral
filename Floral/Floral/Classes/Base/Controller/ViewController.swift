@@ -71,6 +71,8 @@ class ViewController<VM: ViewModel>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        registerNotification()
         setupUI()
         bindVM()
         

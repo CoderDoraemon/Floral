@@ -20,7 +20,7 @@ class TabBarController: UITabBarController {
         let communityVc = LDCommunityController.pageController()
         
         addChildVc(childVc: communityVc, imageName: "tb_0", title: "研究社")
-        addChildVc(childVc: LDCollegeController(), imageName: "tb_1", title: "学院")
+        addChildVc(childVc: LDCollegeController(collectionViewLayout: UICollectionViewFlowLayout()), imageName: "tb_1", title: "学院")
         addChildVc(childVc: LDSharedController(), imageName: "tb_2", title: "分享会")
         addChildVc(childVc: LDMaterialController(), imageName: "tb_3", title: "素材")
         addChildVc(childVc: LDMineController(), imageName: "tb_4", title: "我的")

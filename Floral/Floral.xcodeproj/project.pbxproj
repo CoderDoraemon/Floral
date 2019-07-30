@@ -76,6 +76,11 @@
 		1806CA2822E07879006B9EE6 /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806CA2722E07879006B9EE6 /* BaseApi.swift */; };
 		1806CA2A22E07936006B9EE6 /* URLConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806CA2922E07936006B9EE6 /* URLConst.swift */; };
 		180A450022DFFDE500AC6800 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A44FE22DFFDE500AC6800 /* AppDelegate.swift */; };
+		181154FD22E5546100260626 /* LDCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181154FC22E5546100260626 /* LDCollegeModel.swift */; };
+		1811550122E5554F00260626 /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811550022E5554F00260626 /* CourseModel.swift */; };
+		1811550322E558B300260626 /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811550222E558B300260626 /* BannerModel.swift */; };
+		1811550522E55C5C00260626 /* UtilTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811550422E55C5C00260626 /* UtilTool.swift */; };
+		1811550B22E5876D00260626 /* AppCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811550A22E5876D00260626 /* AppCache.swift */; };
 		185872E922E2AADC00007AF8 /* UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185872E822E2AADC00007AF8 /* UUID.swift */; };
 		185872EE22E2B93000007AF8 /* ScratchableLatexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185872ED22E2B93000007AF8 /* ScratchableLatexView.swift */; };
 		185872F422E2D93100007AF8 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185872F322E2D93100007AF8 /* UIButton+Extension.swift */; };
@@ -89,6 +94,9 @@
 		18CC64F322E163DB001467ED /* LDRecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC64F222E163DB001467ED /* LDRecommendModel.swift */; };
 		18CC64F522E193AA001467ED /* LDRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC64F422E193AA001467ED /* LDRecommendCell.swift */; };
 		18CC64F922E198EF001467ED /* Request+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC64F822E198EF001467ED /* Request+Codable.swift */; };
+		18F34A0822F013D200B94C2D /* LDCollegeImageLeftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F34A0622F013D200B94C2D /* LDCollegeImageLeftCell.swift */; };
+		18F34A0922F013D200B94C2D /* LDCollegeImageTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F34A0722F013D200B94C2D /* LDCollegeImageTopCell.swift */; };
+		18F34A0B22F0160200B94C2D /* AppDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F34A0A22F0160200B94C2D /* AppDistance.swift */; };
 		18FECEB822CDD67D00F95794 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18FECEB722CDD67D00F95794 /* Assets.xcassets */; };
 		18FECEC622CDD67D00F95794 /* FloralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FECEC522CDD67D00F95794 /* FloralTests.swift */; };
 		18FECED122CDD67D00F95794 /* FloralUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FECED022CDD67D00F95794 /* FloralUITests.swift */; };
@@ -192,6 +200,11 @@
 		1806CA2922E07936006B9EE6 /* URLConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConst.swift; sourceTree = "<group>"; };
 		180A44FB22DFFDE500AC6800 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180A44FE22DFFDE500AC6800 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		181154FC22E5546100260626 /* LDCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDCollegeModel.swift; sourceTree = "<group>"; };
+		1811550022E5554F00260626 /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
+		1811550222E558B300260626 /* BannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
+		1811550422E55C5C00260626 /* UtilTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilTool.swift; sourceTree = "<group>"; };
+		1811550A22E5876D00260626 /* AppCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCache.swift; sourceTree = "<group>"; };
 		185872E822E2AADC00007AF8 /* UUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUID.swift; sourceTree = "<group>"; };
 		185872ED22E2B93000007AF8 /* ScratchableLatexView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScratchableLatexView.swift; sourceTree = "<group>"; };
 		185872F322E2D93100007AF8 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -205,6 +218,9 @@
 		18CC64F222E163DB001467ED /* LDRecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDRecommendModel.swift; sourceTree = "<group>"; };
 		18CC64F422E193AA001467ED /* LDRecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDRecommendCell.swift; sourceTree = "<group>"; };
 		18CC64F822E198EF001467ED /* Request+Codable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+Codable.swift"; sourceTree = "<group>"; };
+		18F34A0622F013D200B94C2D /* LDCollegeImageLeftCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDCollegeImageLeftCell.swift; sourceTree = "<group>"; };
+		18F34A0722F013D200B94C2D /* LDCollegeImageTopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDCollegeImageTopCell.swift; sourceTree = "<group>"; };
+		18F34A0A22F0160200B94C2D /* AppDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDistance.swift; sourceTree = "<group>"; };
 		18FECEAD22CDD67C00F95794 /* Floral.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Floral.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FECEB722CDD67D00F95794 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18FECEC122CDD67D00F95794 /* FloralTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FloralTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -452,10 +468,10 @@
 		1806C97422E01626006B9EE6 /* College(学院) */ = {
 			isa = PBXGroup;
 			children = (
+				18F34A0522F013D200B94C2D /* View */,
+				181154FB22E5545400260626 /* Model */,
 				1806C97522E01626006B9EE6 /* ViewModel */,
 				1806C97622E01626006B9EE6 /* Controller */,
-				1806C97722E01626006B9EE6 /* Model */,
-				1806C97822E01626006B9EE6 /* View */,
 			);
 			path = "College(学院)";
 			sourceTree = "<group>";
@@ -474,20 +490,6 @@
 				1806C9B422E01AFC006B9EE6 /* LDCollegeController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		1806C97722E01626006B9EE6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		1806C97822E01626006B9EE6 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		1806C97922E01626006B9EE6 /* Material(素材) */ = {
@@ -555,6 +557,8 @@
 				1806C9AE22E01839006B9EE6 /* AppKey.swift */,
 				1806CA0F22E06692006B9EE6 /* AppMacro.swift */,
 				1806CA2922E07936006B9EE6 /* URLConst.swift */,
+				1811550A22E5876D00260626 /* AppCache.swift */,
+				18F34A0A22F0160200B94C2D /* AppDistance.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -617,7 +621,8 @@
 		1806C98622E01626006B9EE6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				185872E722E2AAC800007AF8 /* UUID */,
+				1811550422E55C5C00260626 /* UtilTool.swift */,
+				185872E822E2AADC00007AF8 /* UUID.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -625,6 +630,7 @@
 		1806C98722E01626006B9EE6 /* Expand */ = {
 			isa = PBXGroup;
 			children = (
+				181154FE22E5553C00260626 /* Public */,
 				1806C98822E01626006B9EE6 /* Protocol */,
 				1806C98922E01626006B9EE6 /* Extensions */,
 				1806C98A22E01626006B9EE6 /* CustomView */,
@@ -824,12 +830,29 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		185872E722E2AAC800007AF8 /* UUID */ = {
+		181154FB22E5545400260626 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				185872E822E2AADC00007AF8 /* UUID.swift */,
+				181154FC22E5546100260626 /* LDCollegeModel.swift */,
 			);
-			path = UUID;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		181154FE22E5553C00260626 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				181154FF22E5553C00260626 /* Model */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		181154FF22E5553C00260626 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1811550022E5554F00260626 /* CourseModel.swift */,
+				1811550222E558B300260626 /* BannerModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		185872EC22E2B93000007AF8 /* ScratchableLatexView */ = {
@@ -856,6 +879,15 @@
 				1858730322E2FF8900007AF8 /* ZPageControl.swift */,
 			);
 			path = ZCycleView;
+			sourceTree = "<group>";
+		};
+		18F34A0522F013D200B94C2D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18F34A0722F013D200B94C2D /* LDCollegeImageTopCell.swift */,
+				18F34A0622F013D200B94C2D /* LDCollegeImageLeftCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		18FECEA422CDD67C00F95794 = {
@@ -991,6 +1023,11 @@
 				TargetAttributes = {
 					18FECEAC22CDD67C00F95794 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					18FECEC022CDD67D00F95794 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -1146,9 +1183,14 @@
 				1806C9F222E04929006B9EE6 /* UITextField+Rx.swift in Sources */,
 				1806C9C122E01E77006B9EE6 /* TabBarController.swift in Sources */,
 				1806C9F122E04929006B9EE6 /* UIScrollView+Rx.swift in Sources */,
+				1811550522E55C5C00260626 /* UtilTool.swift in Sources */,
+				181154FD22E5546100260626 /* LDCollegeModel.swift in Sources */,
 				1806C9AD22E0182D006B9EE6 /* AppEnum.swift in Sources */,
 				1806C9D722E03E6B006B9EE6 /* LDSharedController.swift in Sources */,
+				18F34A0822F013D200B94C2D /* LDCollegeImageLeftCell.swift in Sources */,
 				1806C98F22E0165F006B9EE6 /* CollectionViewController.swift in Sources */,
+				1811550122E5554F00260626 /* CourseModel.swift in Sources */,
+				18F34A0922F013D200B94C2D /* LDCollegeImageTopCell.swift in Sources */,
 				185872F622E2E34100007AF8 /* LDRecommendReusableView.swift in Sources */,
 				1858730722E2FF8900007AF8 /* ZPageControl.swift in Sources */,
 				1806C9B522E01AFC006B9EE6 /* LDCollegeController.swift in Sources */,
@@ -1182,16 +1224,19 @@
 				1806C9F622E04929006B9EE6 /* UIView+Rx.swift in Sources */,
 				1806C99D22E01704006B9EE6 /* ImageView.swift in Sources */,
 				1806C9A722E01748006B9EE6 /* ViewModel.swift in Sources */,
+				1811550B22E5876D00260626 /* AppCache.swift in Sources */,
 				1806C9AF22E01839006B9EE6 /* AppKey.swift in Sources */,
 				1806C9C322E01E88006B9EE6 /* NavigationController.swift in Sources */,
 				1806C9D322E03E4F006B9EE6 /* LDCommunityController.swift in Sources */,
 				1806C9B322E019B3006B9EE6 /* String+Extension.swift in Sources */,
 				1858730422E2FF8900007AF8 /* ZCycleView.swift in Sources */,
+				1811550322E558B300260626 /* BannerModel.swift in Sources */,
 				1806C9BC22E01CD7006B9EE6 /* MJRefreshComponent+Rx.swift in Sources */,
 				18CC64F522E193AA001467ED /* LDRecommendCell.swift in Sources */,
 				1806C98D22E01651006B9EE6 /* ViewController.swift in Sources */,
 				1806C9FB22E051D1006B9EE6 /* UICollectionView+Rx.swift in Sources */,
 				185872EE22E2B93000007AF8 /* ScratchableLatexView.swift in Sources */,
+				18F34A0B22F0160200B94C2D /* AppDistance.swift in Sources */,
 				1806CA1922E0716B006B9EE6 /* LDRecommendVM.swift in Sources */,
 				1806CA0422E05DE2006B9EE6 /* ViewModelProtocol.swift in Sources */,
 				1806C9F922E04929006B9EE6 /* RxTextFieldDelegateProxy.swift in Sources */,
@@ -1381,14 +1426,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6GX73NTZ4L;
+				DEVELOPMENT_TEAM = 3PQ9EHTEHL;
 				INFOPLIST_FILE = "$(SRCROOT)/Floral/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = www.xfsrn.com;
+				PRODUCT_BUNDLE_IDENTIFIER = www.xfsrn.com.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Floral/Resources/Floral-Bridging-header.h";
 				SWIFT_VERSION = 5.0;
@@ -1403,14 +1448,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6GX73NTZ4L;
+				DEVELOPMENT_TEAM = 3PQ9EHTEHL;
 				INFOPLIST_FILE = "$(SRCROOT)/Floral/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = www.xfsrn.com;
+				PRODUCT_BUNDLE_IDENTIFIER = www.xfsrn.com.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Floral/Resources/Floral-Bridging-header.h";
 				SWIFT_VERSION = 5.0;

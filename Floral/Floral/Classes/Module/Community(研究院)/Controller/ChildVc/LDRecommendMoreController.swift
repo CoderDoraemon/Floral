@@ -13,7 +13,7 @@ import RxDataSources
 
 class LDRecommendMoreController: CollectionViewController<LDRecommendMoreVM> {
     
-    let type = BehaviorRelay<Int>(value: 0)
+    let typeId = BehaviorRelay<String>(value: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,7 @@ class LDRecommendMoreController: CollectionViewController<LDRecommendMoreVM> {
         collectionView.rx.setDelegate(self)
             .disposed(by: rx.disposeBag)
         
-        let input = LDRecommendMoreVM.Input(type: type.value)
+        let input = LDRecommendMoreVM.Input(typeId: typeId.value)
         let output = viewModel.transform(input: input)
         
         output.items.drive(collectionView.rx.items) { (cv, row, item) in
@@ -81,7 +81,6 @@ extension LDRecommendMoreController: UICollectionViewDelegateFlowLayout {
         
         return CGSize(width: ScreenWidth, height: Margin_Left)
     }
-    
     
 }
 

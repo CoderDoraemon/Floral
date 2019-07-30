@@ -1,7 +1,6 @@
 PODS:
   - Alamofire (4.8.2)
   - AutoInch (1.3.0)
-  - Cache (5.2.0)
   - CleanJSON (0.9.3)
   - CLImagePickerTool (3.0.7)
   - CryptoSwift (1.0.0)
@@ -9,6 +8,7 @@ PODS:
   - Differentiator (4.0.1)
   - EmptyDataSet-Swift (4.2.0)
   - HandyJSON (5.0.0)
+  - Hero (1.4.0)
   - Hue (5.0.0)
   - JXPhotoBrowser (2.2.3):
     - JXPhotoBrowser/Kingfisher (= 2.2.3)
@@ -66,15 +66,14 @@ PODS:
     - RxSwift (~> 5.0)
     - URLNavigator
   - SnapKit (5.0.0)
-  - SPPermission/Core (4.0.5)
-  - SPPermission/Location (4.0.5):
-    - SPPermission/Core
   - SQLiteRepairKit (1.2.2):
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - SwiftDate (6.0.3)
+  - SwiftLocation (4.0.2)
   - SwiftNotificationCenter (1.0.4)
   - SwiftTheme (0.4.4)
   - SwiftyAttributes (5.1.1)
+  - SwiftyUserDefaults (4.0.0)
   - Then (2.5.0)
   - Tiercel (2.3.0)
   - TTGTagCollectionView (1.11.1)
@@ -88,13 +87,13 @@ PODS:
 
 DEPENDENCIES:
   - AutoInch
-  - Cache
   - CleanJSON
   - CLImagePickerTool
   - CryptoSwift
   - DeviceKit
   - EmptyDataSet-Swift
   - HandyJSON
+  - Hero
   - Hue
   - JXPhotoBrowser
   - LYEmptyView
@@ -109,11 +108,12 @@ DEPENDENCIES:
   - RxSwiftExt
   - RxURLNavigator
   - SnapKit
-  - SPPermission/Location
   - SwiftDate
+  - SwiftLocation
   - SwiftNotificationCenter
   - SwiftTheme
   - SwiftyAttributes
+  - SwiftyUserDefaults
   - Then
   - Tiercel
   - TTGTagCollectionView
@@ -125,7 +125,6 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AutoInch
-    - Cache
     - CleanJSON
     - CLImagePickerTool
     - CryptoSwift
@@ -133,6 +132,7 @@ SPEC REPOS:
     - Differentiator
     - EmptyDataSet-Swift
     - HandyJSON
+    - Hero
     - Hue
     - JXPhotoBrowser
     - Kingfisher
@@ -153,12 +153,13 @@ SPEC REPOS:
     - RxSwiftExt
     - RxURLNavigator
     - SnapKit
-    - SPPermission
     - SQLiteRepairKit
     - SwiftDate
+    - SwiftLocation
     - SwiftNotificationCenter
     - SwiftTheme
     - SwiftyAttributes
+    - SwiftyUserDefaults
     - Then
     - Tiercel
     - TTGTagCollectionView
@@ -171,7 +172,6 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AutoInch: f7094b49484fdffb3e74db738d501896323a1306
-  Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
   CleanJSON: e7e3950845b522326790ae0b114bc98102a33456
   CLImagePickerTool: 159e05efccd13dc86c6f762fa4751270501d109d
   CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
@@ -179,6 +179,7 @@ SPEC CHECKSUMS:
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   EmptyDataSet-Swift: 1fa0b35f530a35f852ecb2b53564728b0c300aaf
   HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
+  Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   Hue: c129cb67be7d093a82bbbc30ce8a96757bf6f37a
   JXPhotoBrowser: 44657e0dc05a710c6ea86a8b4686badd760760f7
   Kingfisher: c7d211b54f1f30d8060aadab177d52b4349c825b
@@ -199,12 +200,13 @@ SPEC CHECKSUMS:
   RxSwiftExt: 4564187392cc53823ef241fa4a11647861567026
   RxURLNavigator: 0f572321e73d71b4e7b483238be138a800023475
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
-  SPPermission: ef54994522bdf471ce1fe6aea267bf471a9de701
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   SwiftDate: 8d4f14bf1ef68e95094511504856547bf9e3e1a6
+  SwiftLocation: 4f030832331a21abaa4e0c5189d0f80ab8d3e377
   SwiftNotificationCenter: 760386da2ce03d3594cb5e96d1e22ec80b44b46f
   SwiftTheme: a381f983da92153908b7a9eeb961b18b6d94d614
   SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
+  SwiftyUserDefaults: 6a1951df1daa19337862b677dd9a4b9bd4c288cd
   Then: 0157115e883545c77967b452fe74a1d25fb796e1
   Tiercel: 87c75f90ec3152ee2a278591b41f606b383af2af
   TTGTagCollectionView: 86fcbfa6a7493c9e860b01c2e693cffc8acf6de1
@@ -214,6 +216,6 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
 
-PODFILE CHECKSUM: bb583ebd47108f696a0e17f67927aaa4a370b187
+PODFILE CHECKSUM: 9a888ced8844b369421ba0e5e3101be1a90ec679
 
 COCOAPODS: 1.7.5

@@ -16,7 +16,7 @@ class LDRecommendBannerReusableView: CollectionReusableView {
     fileprivate let titleView: LDRecommendReusableView = LDRecommendReusableView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: autoDistance(200)))
     
     /// (id, 标题)
-    var moreBtnTap: ((Int, String?) -> ())?
+    var moreBtnTap: ((String, String?) -> ())?
     
     override func setupUI() {
         super.setupUI()
@@ -44,9 +44,9 @@ class LDRecommendBannerReusableView: CollectionReusableView {
         }
     }
     
-    func setData(title: String, total: Int, isMore: Bool, typeID: Int, urls: [String]) {
+    func setData(title: String, total: Int, isMore: Bool, typeId: String, urls: [String]) {
         
-        titleView.setData(title: title, total: total, isMore: isMore, typeID: typeID)
+        titleView.setData(title: title, total: total, isMore: isMore, typeId: typeId)
         
         cycleView.setUrlsGroup(urls)
     }

@@ -12,9 +12,9 @@ import Moya
 enum CollegeApi {
     
     /// 轮播图
-    case bannerList(city: String)
+    case bannerList
     /// 列表
-    case portalList(city: String)
+    case portalList
 }
 
 extension CollegeApi: TargetType {
@@ -22,7 +22,7 @@ extension CollegeApi: TargetType {
     var path: String {
         
         switch self {
-        case .bannerList(_):
+        case .bannerList:
             return "cactus/train/getTopBannerList"
         case .portalList:
             return "cactus/train/portal/v2"
@@ -38,13 +38,10 @@ extension CollegeApi: TargetType {
     
     var task: Task {
         
-        var parameters: [String: Any] = [:]
+        let parameters: [String: Any] = [:]
         
         switch self {
-        case .bannerList(let city):
-            parameters["city"] = city
-        case .portalList(let city):
-            parameters["city"] = city
+        case .bannerList, .portalList: break
         }
         
         return .requestParameters(parameters: parameters, encoding: URLEncoding.default)

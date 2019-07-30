@@ -20,4 +20,6 @@ import UIKit
 @_exported import SnapKit
 @_exported import Kingfisher
 @_exported import RxDataSources
+@_exported import SwiftyUserDefaults
+@_exported import Hero
 

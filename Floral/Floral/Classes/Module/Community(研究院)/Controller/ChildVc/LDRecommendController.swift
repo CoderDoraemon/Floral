@@ -14,8 +14,8 @@ import RxSwift
 
 class LDRecommendController: CollectionViewController<LDRecommendVM> {
     
-    fileprivate let dataSource = BehaviorRelay<[LDRecommendSectionModel]>(value: [])
-    fileprivate let banners = BehaviorRelay<[LDRecommendHeaderModel]>(value: [])
+    fileprivate let dataSource = BehaviorRelay<[CourseSectionModel]>(value: [])
+    fileprivate let banners = BehaviorRelay<[BannerModel]>(value: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +25,6 @@ class LDRecommendController: CollectionViewController<LDRecommendVM> {
         super.setupUI()
         
         collectionView.contentInset = UIEdgeInsets(top: 0, left: Margin_Left, bottom: Margin_Left, right: Margin_Left)
-        collectionView.dataSource = self
-        collectionView.delegate = self
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.register(cellWithClass: LDRecommendCell.self)
         collectionView.register(supplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withClass: LDRecommendReusableView.self)
@@ -40,7 +38,11 @@ class LDRecommendController: CollectionViewController<LDRecommendVM> {
     override func bindVM() {
         super.bindVM()
         
-        let input = LDRecommendVM.Input(city: "广州")
+        // 设置代理/数据源
+        collectionView.rx.setDelegate(self).disposed(by: rx.disposeBag)
+        collectionView.rx.setDataSource(self).disposed(by: rx.disposeBag)
+        
+        let input = LDRecommendVM.Input(city: "")
         let output = viewModel.transform(input: input)
         
         output.banners.drive(onNext: { [weak self] (list) in
@@ -93,11 +95,11 @@ extension LDRecommendController: UICollectionViewDataSource {
             
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withClass: LDRecommendBannerReusableView.self, for: indexPath)
             
-            headerView.setData(title: group.title, total: group.total, isMore: group.more,typeID: group.holderId, urls: urls)
+            headerView.setData(title: group.title, total: group.total, isMore: group.more, typeId: group.holderId, urls: urls)
             
-            headerView.moreBtnTap = { [weak self] (type, title) in
+            headerView.moreBtnTap = { [weak self] (typeId, title) in
                 let vc = LDRecommendMoreController(collectionViewLayout: UICollectionViewFlowLayout())
-                vc.type.accept(type)
+                vc.typeId.accept(typeId)
                 vc.navigationTitle.accept(title)
                 self?.navigationController?.pushViewController(vc, animated: true)
                 }
@@ -107,11 +109,11 @@ extension LDRecommendController: UICollectionViewDataSource {
             
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withClass: LDRecommendReusableView.self, for: indexPath)
             
-            headerView.setData(title: group.title, total: group.total, isMore: group.more, typeID: group.holderId)
+            headerView.setData(title: group.title, total: group.total, isMore: group.more, typeId: group.holderId)
             
-            headerView.moreBtnTap = { [weak self] (type, title) in
+            headerView.moreBtnTap = { [weak self] (typeId, title) in
                 let vc = LDRecommendMoreController(collectionViewLayout: UICollectionViewFlowLayout())
-                vc.type.accept(type)
+                vc.typeId.accept(typeId)
                 vc.navigationTitle.accept(title)
                 self?.navigationController?.pushViewController(vc, animated: true)
             }

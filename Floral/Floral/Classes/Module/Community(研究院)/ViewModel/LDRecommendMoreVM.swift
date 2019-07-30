@@ -11,10 +11,10 @@ import UIKit
 class LDRecommendMoreVM: RefreshViewModel {
     
     struct Input {
-        let type: Int
+        let typeId: String
     }
     struct Output {
-        let items: Driver<[LDRecommendModel]>
+        let items: Driver<[CourseModel]>
     }
 }
 
@@ -22,7 +22,7 @@ extension LDRecommendMoreVM: ViewModelProtocol {
     
     func transform(input: LDRecommendMoreVM.Input) -> LDRecommendMoreVM.Output {
         
-        let itemList = BehaviorRelay<[LDRecommendModel]>(value: [])
+        let itemList = BehaviorRelay<[CourseModel]>(value: [])
         
         var page = 0
         
@@ -32,7 +32,7 @@ extension LDRecommendMoreVM: ViewModelProtocol {
             .then(page = 0)
             .flatMapLatest { [unowned self] in
                 
-                self.request(page: page, type: input.type)
+                self.request(page: page, typeId: input.typeId)
         }
         
         /// 上拉刷新
@@ -41,7 +41,7 @@ extension LDRecommendMoreVM: ViewModelProtocol {
             .then(page += 1)
             .flatMapLatest { [unowned self] in
                 
-                self.request(page: page, type: input.type)
+                self.request(page: page, typeId: input.typeId)
         }
         
         /// 绑定数据
@@ -65,8 +65,13 @@ extension LDRecommendMoreVM: ViewModelProtocol {
             loadRecommend.map { _ in
                 RxMJRefreshFooterState.default
             },
-            loadMore.map { _ in
-                RxMJRefreshFooterState.default
+            loadMore.map { list in
+                
+                if list.count > 0 {
+                    return RxMJRefreshFooterState.default
+                } else {
+                    return RxMJRefreshFooterState.noMoreData
+                }
             })
             .startWith(.hidden)
             .drive(refreshInput.footerRefreshState)
@@ -81,12 +86,12 @@ extension LDRecommendMoreVM: ViewModelProtocol {
 
 extension LDRecommendMoreVM {
     
-    func request(page: Int, type: Int) -> Driver<[LDRecommendModel]> {
+    func request(page: Int, typeId: String) -> Driver<[CourseModel]> {
         
         return  RecommendApi
-            .categoryMoreList(page: page, type: type)
+            .categoryMoreList(page: page, typeId: typeId)
             .request()
-            .mapObject([LDRecommendModel].self)
+            .mapObject([CourseModel].self)
             .trackActivity(self.loading)
             .trackError(self.refreshError)
             .asDriverOnErrorJustComplete()

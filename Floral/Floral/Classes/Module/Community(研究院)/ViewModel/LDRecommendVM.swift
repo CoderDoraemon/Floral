@@ -13,9 +13,10 @@ class LDRecommendVM: RefreshViewModel {
     struct Input {
         let city: String
     }
+    
     struct Output {
-        let banners: Driver<[LDRecommendHeaderModel]>
-        let items: Driver<[LDRecommendSectionModel]>
+        let banners: Driver<[BannerModel]>
+        let items: Driver<[CourseSectionModel]>
     }
 }
 
@@ -23,20 +24,20 @@ extension LDRecommendVM: ViewModelProtocol {
     
     func transform(input: LDRecommendVM.Input) -> LDRecommendVM.Output {
         
-        let bannerList = BehaviorRelay<[LDRecommendHeaderModel]>(value: [])
-        let itemList = BehaviorRelay<[LDRecommendSectionModel]>(value: [])
+        let bannerList = BehaviorRelay<[BannerModel]>(value: [])
+        let itemList = BehaviorRelay<[CourseSectionModel]>(value: [])
         
         var page = 0
         
         /// 上拉刷新
         let loadRecommend = refreshOutput
         .headerRefreshing
-            .flatMapLatest { (_) -> SharedSequence<DriverSharingStrategy, ([LDRecommendHeaderModel], LDRecommendHotModel, [LDRecommendSectionModel])> in
+            .flatMapLatest { (_) -> SharedSequence<DriverSharingStrategy, ([BannerModel], LDRecommendHotModel, [CourseSectionModel])> in
                 
                 let loadBranner = RecommendApi
-                .bannerList(city: input.city)
+                .bannerList
                 .request()
-                .mapObject([LDRecommendHeaderModel].self)
+                .mapObject([BannerModel].self)
                 .asDriver(onErrorJustReturn: [])
                 
                 let loadHop = RecommendApi
@@ -48,7 +49,7 @@ extension LDRecommendVM: ViewModelProtocol {
                 let loadCategory = RecommendApi
                     .categoryList(page: page)
                     .request()
-                    .mapObject([LDRecommendSectionModel].self)
+                    .mapObject([CourseSectionModel].self)
                     .asDriver(onErrorJustReturn: [])
                 
                 return Driver.zip(loadBranner, loadHop, loadCategory)
@@ -63,7 +64,7 @@ extension LDRecommendVM: ViewModelProtocol {
                 RecommendApi
                     .categoryList(page: page)
                     .request()
-                    .mapObject([LDRecommendSectionModel].self)
+                    .mapObject([CourseSectionModel].self)
                     .trackActivity(self.loading)
                     .trackError(self.refreshError)
                     .asDriverOnErrorJustComplete()
@@ -104,8 +105,13 @@ extension LDRecommendVM: ViewModelProtocol {
             loadRecommend.map { _ in
                 RxMJRefreshFooterState.default
             },
-            loadMore.map { _ in
-                RxMJRefreshFooterState.default
+            loadMore.map { list in
+                
+                if list.count > 0 {
+                    return RxMJRefreshFooterState.default
+                } else {
+                    return RxMJRefreshFooterState.noMoreData
+                }
             })
             .startWith(.hidden)
             .drive(refreshInput.footerRefreshState)

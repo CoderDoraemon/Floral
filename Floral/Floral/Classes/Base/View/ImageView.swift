@@ -11,12 +11,38 @@ import UIKit
 /// UIImageView
 class ImageView: UIImageView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
     }
-    */
+    
+    override init(image: UIImage?) {
+        super.init(image: image)
+        setupUI()
+    }
+    
+    override init(image: UIImage?, highlightedImage: UIImage?) {
+        super.init(image: image, highlightedImage: highlightedImage)
+        setupUI()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupUI()
+    }
+    
+    func setupUI() {
+        
+        layer.masksToBounds = true
+        contentMode = .center
+        
+        hero.modifiers = [.arc]
+        
+        updateUI()
+    }
+    
+    func updateUI() {
+        setNeedsDisplay()
+    }
 
 }

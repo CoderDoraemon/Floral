@@ -82,11 +82,7 @@ class TableViewController<RVM: RefreshViewModel>: ViewController<RVM> {
     // MARK: - 绑定头部刷新回调和头部刷新状态
     func bindHeader() {
         
-        guard
-            let refreshHeader = tableView.refreshHeader
-            else {
-                return
-        }
+        guard let refreshHeader = tableView.refreshHeader else { return }
         
         // 将刷新事件传递给 refreshVM
         refreshHeader.rx.refreshing
@@ -97,6 +93,9 @@ class TableViewController<RVM: RefreshViewModel>: ViewController<RVM> {
         viewModel
             .refreshOutput
             .headerRefreshState
+            .do(onNext: { _ in
+                self.tableView.refreshFooter?.resetNoMoreData()
+            })
             .drive(refreshHeader.rx.isRefreshing)
             .disposed(by: rx.disposeBag)
         
@@ -111,11 +110,7 @@ class TableViewController<RVM: RefreshViewModel>: ViewController<RVM> {
     // MARK: - 绑定尾部刷新回调和尾部刷新状态
     func bindFooter() {
         
-        guard
-            let refreshFooter = tableView.refreshFooter
-            else {
-                return
-        }
+        guard let refreshFooter = tableView.refreshFooter else { return }
         
         // 将刷新事件传递给 refreshVM
         refreshFooter.rx.refreshing
@@ -143,10 +138,10 @@ class TableViewController<RVM: RefreshViewModel>: ViewController<RVM> {
     // MARK: - 绑定数据源 nil 的占位图
     func bindReloadEmpty() {
         
-//        viewModel.loading
-//            .distinctUntilChanged()
-//            .mapToVoid()
-//            .drive(tableView.rx.reloadEmptyDataSet)
-//            .disposed(by: rx.disposeBag)
+        viewModel.loading
+            .distinctUntilChanged()
+            .mapToVoid()
+            .drive(tableView.rx.reloadEmptyDataSet)
+            .disposed(by: rx.disposeBag)
     }
 }

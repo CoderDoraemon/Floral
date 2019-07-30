@@ -78,21 +78,27 @@ class CollectionViewController<RVM: RefreshViewModel>: ViewController<RVM> {
     // MARK: - 绑定头部刷新回调和头部刷新状态
     func bindHeader() {
         
-        guard
-            let refreshHeader = collectionView.refreshHeader
-            else {
-                return
-        }
+        guard let refreshHeader = collectionView.refreshHeader else { return }
         
-        // 成功时的头部状态
+        // 将刷新事件传递给 refreshVM
         refreshHeader.rx.refreshing
             .bind(to: viewModel.refreshInput.beginHeaderRefresh)
             .disposed(by: rx.disposeBag)
         
-        // 失败时的头部状态
+        // 成功时的头部状态
         viewModel
             .refreshOutput
             .headerRefreshState
+            .do(onNext: { _ in
+                self.collectionView.refreshFooter?.resetNoMoreData()
+            })
+            .drive(refreshHeader.rx.isRefreshing)
+            .disposed(by: rx.disposeBag)
+        
+        // 失败时的头部状态
+        viewModel
+            .refreshError
+            .mapTo(false)
             .drive(refreshHeader.rx.isRefreshing)
             .disposed(by: rx.disposeBag)
     }
@@ -100,11 +106,7 @@ class CollectionViewController<RVM: RefreshViewModel>: ViewController<RVM> {
     // MARK: - 绑定尾部刷新回调和尾部刷新状态
     func bindFooter() {
         
-        guard
-            let refreshFooter = collectionView.refreshFooter
-            else {
-                return
-        }
+        guard let refreshFooter = collectionView.refreshFooter else { return }
         
         // 将刷新事件传递给 refreshVM
         refreshFooter.rx.refreshing
@@ -132,10 +134,10 @@ class CollectionViewController<RVM: RefreshViewModel>: ViewController<RVM> {
     // MARK: - 绑定数据源 nil 的占位图
     func bindReloadEmpty() {
         
-//        viewModel.loading
-//            .distinctUntilChanged()
-//            .mapToVoid()
-//            .drive(collectionView.rx.reloadEmptyDataSet)
-//            .disposed(by: rx.disposeBag)
+        viewModel.loading
+            .distinctUntilChanged()
+            .mapToVoid()
+            .drive(collectionView.rx.reloadEmptyDataSet)
+            .disposed(by: rx.disposeBag)
     }
 }

@@ -22,10 +22,10 @@ class LDRecommendReusableView: CollectionReusableView {
         $0.setImage(UIImage(named: "p_back_right"), for: .normal)
     }
     
-    fileprivate var typeID: Int = 0
+    fileprivate var typeId: String = ""
     
-    /// (id, 标题)
-    var moreBtnTap: ((Int, String?) -> ())?
+    /// (typeId, title)
+    var moreBtnTap: ((String, String?) -> ())?
     
     override func setupUI() {
         super.setupUI()
@@ -38,7 +38,7 @@ class LDRecommendReusableView: CollectionReusableView {
                 guard let self = self else { return }
                 
                 if let _block = self.moreBtnTap {
-                    _block(self.typeID, self.titleLabel.text ?? "")
+                    _block(self.typeId, self.titleLabel.text ?? "")
                 }
                 
             }).disposed(by: rx.disposeBag)
@@ -60,12 +60,12 @@ class LDRecommendReusableView: CollectionReusableView {
     }
     
     
-    func setData(title: String, total: Int, isMore: Bool, typeID: Int) {
+    func setData(title: String, total: Int, isMore: Bool, typeId: String) {
         
         titleLabel.text = title
         moreButton.isHidden = !isMore
         moreButton.setTitle("查看更多( \(total) )", for: .normal)
         moreButton.setImage(position: .right, spacing: 5)
-        self.typeID = typeID
+        self.typeId = typeId
     }
 }

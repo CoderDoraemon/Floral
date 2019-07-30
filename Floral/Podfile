@@ -15,7 +15,7 @@ def common_Pods
   # rx_disposeBag
   pod 'NSObject+Rx'
   # 缓存
-  pod 'Cache'
+  pod 'SwiftyUserDefaults'
   # 字典转模型
   pod 'HandyJSON'
   # 自动布局
@@ -50,8 +50,12 @@ def common_Pods
   pod 'SwiftNotificationCenter'
   pod 'NVActivityIndicatorView'
   pod 'RxSwiftExt'
+  # 十六进制颜色值
   pod 'Hue'
-  pod 'SPPermission/Location'
+  # 定位
+  pod 'SwiftLocation'
+  # 动画
+  pod 'Hero'
   
   # 拉刷新控件
   pod 'MJRefresh'

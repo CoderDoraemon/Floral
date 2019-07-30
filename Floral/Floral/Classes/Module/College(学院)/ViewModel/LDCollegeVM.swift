@@ -11,11 +11,11 @@ import UIKit
 class LDCollegeVM: RefreshViewModel {
     
     struct Input {
-        let city: String
     }
+    
     struct Output {
-        let banners: Driver<[LDRecommendHeaderModel]>
-        let items: Driver<[LDRecommendSectionModel]>
+        let banners: Driver<[BannerModel]>
+        let items: Driver<[CourseSectionModel]>
     }
 }
 
@@ -23,92 +23,43 @@ extension LDCollegeVM: ViewModelProtocol {
     
     func transform(input: LDCollegeVM.Input) -> LDCollegeVM.Output {
         
-        let bannerList = BehaviorRelay<[LDRecommendHeaderModel]>(value: [])
-        let itemList = BehaviorRelay<[LDRecommendSectionModel]>(value: [])
-        
-        var page = 0
+        let bannerList = BehaviorRelay<[BannerModel]>(value: [])
+        let itemList = BehaviorRelay<[CourseSectionModel]>(value: [])
         
         /// 上拉刷新
         let loadRecommend = refreshOutput
             .headerRefreshing
-            .flatMapLatest { (_) -> SharedSequence<DriverSharingStrategy, ([LDRecommendHeaderModel], LDRecommendHotModel, [LDRecommendSectionModel])> in
+            .flatMapLatest { (_) -> SharedSequence<DriverSharingStrategy, ([BannerModel], [CourseSectionModel])> in
                 
-                let loadBranner = RecommendApi
-                    .bannerList(city: input.city)
+                let loadBranner = CollegeApi
+                    .bannerList
                     .request()
-                    .mapObject([LDRecommendHeaderModel].self)
+                    .mapObject([BannerModel].self)
                     .asDriver(onErrorJustReturn: [])
                 
-                let loadHop = RecommendApi
+                let loadCategory = CollegeApi
                     .portalList
                     .request()
-                    .mapObject(LDRecommendHotModel.self)
-                    .asDriver(onErrorJustReturn: LDRecommendHotModel(limitedTimeFreeList: nil, latestRecommendList: nil))
-                
-                let loadCategory = RecommendApi
-                    .categoryList(page: page)
-                    .request()
-                    .mapObject([LDRecommendSectionModel].self)
+                    .mapObject([CourseSectionModel].self)
                     .asDriver(onErrorJustReturn: [])
                 
-                return Driver.zip(loadBranner, loadHop, loadCategory)
-        }
-        
-        /// 下拉刷新
-        let loadMore = refreshOutput
-            .footerRefreshing
-            .then(page += 1)
-            .flatMapLatest { [unowned self] in
-                
-                RecommendApi
-                    .categoryList(page: page)
-                    .request()
-                    .mapObject([LDRecommendSectionModel].self)
-                    .trackActivity(self.loading)
-                    .trackError(self.refreshError)
-                    .asDriverOnErrorJustComplete()
+                return Driver.zip(loadBranner, loadCategory)
         }
         
         /// 绑定数据
         loadRecommend.drive(onNext: { (arg0) in
             
-            let (headerList, hotItem, categoryList) = arg0
+            let (banner, categoryList) = arg0
             
-            bannerList.accept(headerList)
-            
-            if let limited = hotItem.limitedTimeFreeList {
-                itemList.append(limited)
-            }
-            
-            if let latest = hotItem.latestRecommendList {
-                itemList.append(latest)
-            }
-            
-            itemList.accept(itemList.value + categoryList)
+            bannerList.accept(banner)
+            itemList.accept(categoryList)
             
         }).disposed(by: disposeBag)
-        
-        loadMore
-            .drive(itemList.append)
-            .disposed(by: disposeBag)
-        
         
         // 头部刷新状态
         loadRecommend
             .mapTo(false)
             .drive(refreshInput.headerRefreshState)
-            .disposed(by: disposeBag)
-        
-        // 尾部刷新状态
-        Driver.merge(
-            loadRecommend.map { _ in
-                RxMJRefreshFooterState.default
-            },
-            loadMore.map { _ in
-                RxMJRefreshFooterState.default
-        })
-            .startWith(.hidden)
-            .drive(refreshInput.footerRefreshState)
             .disposed(by: disposeBag)
         
         let output = Output(banners: bannerList.asDriver(), items: itemList.asDriver())
