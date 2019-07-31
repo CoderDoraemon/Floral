@@ -30,7 +30,7 @@ extension LDRecommendVM: ViewModelProtocol {
         var page = 0
         
         /// 上拉刷新
-        let loadRecommend = refreshOutput
+        let loadList = refreshOutput
         .headerRefreshing
             .flatMapLatest { (_) -> SharedSequence<DriverSharingStrategy, ([BannerModel], LDRecommendHotModel, [CourseSectionModel])> in
                 
@@ -71,7 +71,7 @@ extension LDRecommendVM: ViewModelProtocol {
         }
         
         /// 绑定数据
-        loadRecommend.drive(onNext: { (arg0) in
+        loadList.drive(onNext: { (arg0) in
             
             let (headerList, hotItem, categoryList) = arg0
             
@@ -95,14 +95,14 @@ extension LDRecommendVM: ViewModelProtocol {
         
         
         // 头部刷新状态
-        loadRecommend
+        loadList
             .mapTo(false)
             .drive(refreshInput.headerRefreshState)
             .disposed(by: disposeBag)
         
         // 尾部刷新状态
         Driver.merge(
-            loadRecommend.map { _ in
+            loadList.map { _ in
                 RxMJRefreshFooterState.default
             },
             loadMore.map { list in

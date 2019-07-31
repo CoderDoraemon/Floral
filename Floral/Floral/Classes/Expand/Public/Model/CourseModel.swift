@@ -55,4 +55,34 @@ struct CourseModel: Codable {
     let score: String
     /// 星星
     let star: String
+    
+    /// 积分
+    let integral: Int
+    /// 著作权
+    let copyright: String
+    /// 分类
+    let categoryName: String
+    /// 创建时间
+    let timestamp: String
+    /// 进入url
+    let entryUrl: String
+    /// 详情URL
+    let detailUrl: String
+    /// 图片下载地址
+    let downloadUrl: String
+}
+
+struct TeacherModel: Codable {
+    /// id
+    let teacherId: String
+    /// 昵称
+    let teacherName: String
+    /// 国籍
+    let teacherCountry: String
+    /// 职称
+    let teacherHonor: String
+    /// 头像
+    let teacherPhoto: String
+    /// 作品
+    let teacherIntroduce: String
 }

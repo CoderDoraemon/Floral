@@ -1,5 +1,5 @@
 //
-//  LDCollegeVM.swift
+//  LDTodayRecommendVM.swift
 //  Floral
 //
 //  Created by LDD on 2019/7/21.
@@ -8,37 +8,41 @@
 
 import UIKit
 
-class LDCollegeVM: RefreshViewModel {
+class LDTodayRecommendVM: RefreshViewModel {
     
     struct Input {
+        let categoryId: String
     }
     
     struct Output {
-        let banners: Driver<[BannerModel]>
+        let banners: Driver<[CourseModel]>
         let items: Driver<[CourseSectionModel]>
     }
 }
 
-extension LDCollegeVM: ViewModelProtocol {
+extension LDTodayRecommendVM: ViewModelProtocol {
     
-    func transform(input: LDCollegeVM.Input) -> LDCollegeVM.Output {
+    func transform(input: LDTodayRecommendVM.Input) -> LDTodayRecommendVM.Output {
         
-        let bannerList = BehaviorRelay<[BannerModel]>(value: [])
+        let bannerList = BehaviorRelay<[CourseModel]>(value: [])
         let itemList = BehaviorRelay<[CourseSectionModel]>(value: [])
+        
+        var page = 0
         
         /// 上拉刷新
         let loadList = refreshOutput
             .headerRefreshing
-            .flatMapLatest { (_) -> SharedSequence<DriverSharingStrategy, ([BannerModel], [CourseSectionModel])> in
+            .then(page = 0)
+            .flatMapLatest { (_) -> SharedSequence<DriverSharingStrategy, ([CourseModel], [CourseSectionModel])> in
                 
-                let loadBranner = CollegeApi
-                    .bannerList
+                let loadBranner = MaterialApi
+                    .contentList(page: page, categoryId: input.categoryId)
                     .request()
-                    .mapObject([BannerModel].self)
+                    .mapObject([CourseModel].self, atKeyPath: "data.list")
                     .asDriver(onErrorJustReturn: [])
                 
-                let loadCategory = CollegeApi
-                    .portalList
+                let loadCategory = MaterialApi
+                    .recommendList
                     .request()
                     .mapObject([CourseSectionModel].self)
                     .asDriver(onErrorJustReturn: [])
@@ -69,7 +73,7 @@ extension LDCollegeVM: ViewModelProtocol {
     
 }
 
-extension LDCollegeVM {
+extension LDTodayRecommendVM {
     
     
 }

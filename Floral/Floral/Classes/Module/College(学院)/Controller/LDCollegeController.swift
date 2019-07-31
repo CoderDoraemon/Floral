@@ -21,7 +21,7 @@ class LDCollegeController: CollectionViewController<LDCollegeVM> {
         super.setupUI()
         
         navigationTitle.accept("美学学院")
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: Margin_Left, bottom: Margin_Left, right: Margin_Left)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: k_Margin_Fifteen, bottom: k_Margin_Fifteen, right: k_Margin_Fifteen)
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.register(cellWithClass: LDCollegeImageTopCell.self)
         collectionView.register(cellWithClass: LDCollegeImageLeftCell.self)
@@ -133,19 +133,19 @@ extension LDCollegeController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let row: CGFloat = 2
-        let w = Int((ScreenWidth  - autoDistance(5) * (row - 1) - Margin_Left * 2) / row)
+        let w = Int((ScreenWidth  - autoDistance(5) * (row - 1) - k_Margin_Fifteen * 2) / row)
         
         let group = dataSource.value[indexPath.section]
         
         if group.template == 2 {
-            return CGSize(width: CGFloat(ScreenWidth - Margin_Left * 2), height: autoDistance(150))
+            return CGSize(width: CGFloat(ScreenWidth - k_Margin_Fifteen * 2), height: autoDistance(150))
         }
         
         return CGSize(width: CGFloat(w), height: autoDistance(200))
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return Margin_Left
+        return k_Margin_Fifteen
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

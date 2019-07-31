@@ -26,6 +26,10 @@ class PageViewController: WMPageController {
         return pageController
     }
     
+    
+    /// 标题
+    let navigationTitle = BehaviorRelay<String?>(value: nil)
+    
     /// 分割线
     lazy var lineView: UIView = {
         
@@ -39,7 +43,48 @@ class PageViewController: WMPageController {
         
         tz_addPopGesture(to: self.scrollView)
         fd_interactivePopMaxAllowedInitialDistanceToLeftEdge = 30
+        
+        registerNotification()
+        setupUI()
+        bindVM()
+        
+        navigationTitle.bind(to: navigationItem.rx.title).disposed(by: rx.disposeBag)
     }
     
+    // MARK: - deinit
+    deinit {
+        print("\(type(of: self)): Deinited")
+    }
+    
+    // MARK: - didReceiveMemoryWarning
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        print("\(type(of: self)): Received Memory Warning")
+    }
+    
+    func setupUI() {
+        view.backgroundColor = .white
+    }
+    
+    func bindVM() {}
+    
+    /// 重复点击 TabBar
+    func repeatClickTabBar() {}
 
+}
+
+// MARK: - 通知
+extension PageViewController {
+    
+    // MARK: - 注册通知
+    private func registerNotification() {
+        
+    }
+    
+    // MARK: - tabBar重复点击
+    func tabBarRepeatClick() {
+        
+        guard view.isShowingOnKeyWindow() else {return}
+        repeatClickTabBar()
+    }
 }

@@ -1,28 +1,29 @@
 //
-//  LDRecommendMoreVM.swift
+//  LDTeacherVM.swift
 //  Floral
 //
-//  Created by LDD on 2019/7/18.
+//  Created by LDD on 2019/7/30.
 //  Copyright © 2019 文刂Rn. All rights reserved.
 //
 
 import UIKit
 
-class LDRecommendMoreVM: RefreshViewModel {
+
+class LDTeacherVM: RefreshViewModel {
     
     struct Input {
-        let typeId: String
+        let category: String
     }
     struct Output {
-        let items: Driver<[CourseModel]>
+        let items: Driver<[TeacherModel]>
     }
 }
 
-extension LDRecommendMoreVM: ViewModelProtocol {
+extension LDTeacherVM: ViewModelProtocol {
     
-    func transform(input: LDRecommendMoreVM.Input) -> LDRecommendMoreVM.Output {
+    func transform(input: LDTeacherVM.Input) -> LDTeacherVM.Output {
         
-        let itemList = BehaviorRelay<[CourseModel]>(value: [])
+        let itemList = BehaviorRelay<[TeacherModel]>(value: [])
         
         var page = 0
         
@@ -32,7 +33,7 @@ extension LDRecommendMoreVM: ViewModelProtocol {
             .then(page = 0)
             .flatMapLatest { [unowned self] in
                 
-                self.request(page: page, typeId: input.typeId)
+                self.request(page: page, category: input.category)
         }
         
         /// 上拉刷新
@@ -41,7 +42,7 @@ extension LDRecommendMoreVM: ViewModelProtocol {
             .then(page += 1)
             .flatMapLatest { [unowned self] in
                 
-                self.request(page: page, typeId: input.typeId)
+                self.request(page: page, category: input.category)
         }
         
         /// 绑定数据
@@ -72,7 +73,7 @@ extension LDRecommendMoreVM: ViewModelProtocol {
                 } else {
                     return RxMJRefreshFooterState.noMoreData
                 }
-            })
+        })
             .startWith(.hidden)
             .drive(refreshInput.footerRefreshState)
             .disposed(by: disposeBag)
@@ -84,14 +85,14 @@ extension LDRecommendMoreVM: ViewModelProtocol {
     
 }
 
-extension LDRecommendMoreVM {
+extension LDTeacherVM {
     
-    func request(page: Int, typeId: String) -> Driver<[CourseModel]> {
+    func request(page: Int, category: String) -> Driver<[TeacherModel]> {
         
-        return  RecommendApi
-            .categoryMoreList(page: page, typeId: typeId)
+        return  TeacherApi
+            .teacherList(page: page, category: category)
             .request()
-            .mapObject([CourseModel].self)
+            .mapObject([TeacherModel].self)
             .trackActivity(self.loading)
             .trackError(self.refreshError)
             .asDriverOnErrorJustComplete()

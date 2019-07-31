@@ -34,7 +34,7 @@ class ImageView: UIImageView {
     func setupUI() {
         
         layer.masksToBounds = true
-        contentMode = .center
+        contentMode = .scaleAspectFill
         
         hero.modifiers = [.arc]
         

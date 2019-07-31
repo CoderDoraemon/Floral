@@ -48,7 +48,7 @@ class LDRecommendReusableView: CollectionReusableView {
         super.setupConstraints()
         
         titleLabel.snp.makeConstraints { (make) in
-            make.bottom.equalToSuperview().offset(-Margin_Left)
+            make.bottom.equalToSuperview().offset(-k_Margin_Fifteen)
             make.left.equalToSuperview()
         }
         

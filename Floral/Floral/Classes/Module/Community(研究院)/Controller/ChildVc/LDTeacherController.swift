@@ -1,8 +1,8 @@
 //
-//  LDRecommendMoreController.swift
+//  LDTeacherController.swift
 //  Floral
 //
-//  Created by LDD on 2019/7/21.
+//  Created by LDD on 2019/7/30.
 //  Copyright © 2019 文刂Rn. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import RxCocoa
 import Differentiator
 import RxDataSources
 
-class LDRecommendMoreController: CollectionViewController<LDRecommendMoreVM> {
+class LDTeacherController: CollectionViewController<LDTeacherVM> {
     
     let typeId = BehaviorRelay<String>(value: "")
     
@@ -23,7 +23,7 @@ class LDRecommendMoreController: CollectionViewController<LDRecommendMoreVM> {
         super.setupUI()
         
         
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: Margin_Left, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: k_Margin_Fifteen, right: 0)
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.register(cellWithClass: LDRecommendCell.self)
         collectionView.register(supplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withClass: LDRecommendReusableView.self)
@@ -41,24 +41,31 @@ class LDRecommendMoreController: CollectionViewController<LDRecommendMoreVM> {
         collectionView.rx.setDelegate(self)
             .disposed(by: rx.disposeBag)
         
-        let input = LDRecommendMoreVM.Input(typeId: typeId.value)
+        let input = LDTeacherVM.Input(category: "1")
         let output = viewModel.transform(input: input)
         
         output.items.drive(collectionView.rx.items) { (cv, row, item) in
             
             let cell = cv.dequeueReusableCell(withClass: LDRecommendCell.self, for: IndexPath(item: row, section: 0))
             
-            cell.info = (item.title, item.teacher, item.imgUrl)
+            cell.info = (item.teacherName, item.teacherCountry, item.teacherPhoto)
             
             return cell
             }
             .disposed(by: rx.disposeBag)
         
+        collectionView.rx.modelSelected(TeacherModel.self).subscribe(onNext: { [weak self] (item) in
+            
+            let vc = LDTeacherCourseController(collectionViewLayout: UICollectionViewFlowLayout())
+            vc.teacherId.accept(item.teacherId)
+            vc.navigationTitle.accept(item.teacherName)
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }).disposed(by: rx.disposeBag)
     }
     
 }
 
-extension LDRecommendMoreController: UICollectionViewDelegateFlowLayout {
+extension LDTeacherController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -69,7 +76,7 @@ extension LDRecommendMoreController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return Margin_Left
+        return k_Margin_Fifteen
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -79,7 +86,7 @@ extension LDRecommendMoreController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
-        return CGSize(width: ScreenWidth, height: Margin_Left)
+        return CGSize(width: ScreenWidth, height: k_Margin_Fifteen)
     }
     
 }

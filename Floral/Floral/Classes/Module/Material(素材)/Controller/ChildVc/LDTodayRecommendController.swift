@@ -1,5 +1,5 @@
 //
-//  LDRecommendController.swift
+//  LDTodayRecommendController.swift
 //  Floral
 //
 //  Created by LDD on 2019/7/18.
@@ -12,10 +12,13 @@ import Differentiator
 import RxDataSources
 import RxSwift
 
-class LDRecommendController: CollectionViewController<LDRecommendVM> {
+class LDTodayRecommendController: CollectionViewController<LDTodayRecommendVM> {
     
     fileprivate let dataSource = BehaviorRelay<[CourseSectionModel]>(value: [])
-    fileprivate let banners = BehaviorRelay<[BannerModel]>(value: [])
+    fileprivate let banners = BehaviorRelay<[CourseModel]>(value: [])
+    
+    
+    let categoryId = BehaviorRelay<String>(value: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +29,10 @@ class LDRecommendController: CollectionViewController<LDRecommendVM> {
         
         collectionView.contentInset = UIEdgeInsets(top: 0, left: k_Margin_Fifteen, bottom: k_Margin_Fifteen, right: k_Margin_Fifteen)
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        collectionView.register(cellWithClass: LDRecommendCell.self)
+        collectionView.register(cellWithClass: LDImageCell.self)
         collectionView.register(supplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withClass: LDRecommendReusableView.self)
         collectionView.register(supplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withClass: LDRecommendBannerReusableView.self)
         collectionView.refreshHeader = RefreshNormalHeader()
-        collectionView.refreshFooter = RefreshFooter()
         beginHeaderRefresh()
         
     }
@@ -42,7 +44,7 @@ class LDRecommendController: CollectionViewController<LDRecommendVM> {
         collectionView.rx.setDelegate(self).disposed(by: rx.disposeBag)
         collectionView.rx.setDataSource(self).disposed(by: rx.disposeBag)
         
-        let input = LDRecommendVM.Input(city: "")
+        let input = LDTodayRecommendVM.Input(categoryId: categoryId.value)
         let output = viewModel.transform(input: input)
         
         output.banners.drive(onNext: { [weak self] (list) in
@@ -62,7 +64,7 @@ class LDRecommendController: CollectionViewController<LDRecommendVM> {
 }
 
 
-extension LDRecommendController: UICollectionViewDataSource {
+extension LDTodayRecommendController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         
@@ -77,10 +79,12 @@ extension LDRecommendController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withClass: LDRecommendCell.self, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withClass: LDImageCell.self, for: indexPath)
         
         let group = dataSource.value[indexPath.section]
-        cell.model = group.model[indexPath.item]
+        let model = group.model[indexPath.item]
+        
+        cell.coverImage = model.entryUrl
         
         return cell
     }
@@ -89,7 +93,7 @@ extension LDRecommendController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         let group = dataSource.value[indexPath.section]
-        let urls = banners.value.map({ $0.imageUrl })
+        let urls = banners.value.map({ $0.entryUrl })
         
         if indexPath.section == 0 && urls.count > 0 {
             
@@ -123,11 +127,11 @@ extension LDRecommendController: UICollectionViewDataSource {
     }
 }
 
-extension LDRecommendController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension LDTodayRecommendController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
-        let urls = banners.value.map({ $0.imageUrl })
+        let urls = banners.value.map({ $0.entryUrl })
         
         if section == 0 && urls.count > 0 {
             

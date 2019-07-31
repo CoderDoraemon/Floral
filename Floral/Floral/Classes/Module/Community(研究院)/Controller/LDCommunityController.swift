@@ -13,12 +13,6 @@ class LDCommunityController: PageViewController {
     /** 默认Vip */
     fileprivate let titleArray: [String] = ["推荐", "名师", "学习计划", "村落"]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setup()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -27,12 +21,7 @@ class LDCommunityController: PageViewController {
         }
     }
     
-}
-
-
-fileprivate extension LDCommunityController {
-    
-    func setup() {
+    override func setupUI() {
         
         let rightView_width: CGFloat = 35
         
@@ -66,20 +55,22 @@ extension LDCommunityController {
     
     override func pageController(_ pageController: WMPageController, viewControllerAt index: Int) -> UIViewController {
         
-        if index == 0 {
-            
-            let layout = UICollectionViewFlowLayout()
-            layout.scrollDirection = .vertical
-            layout.minimumLineSpacing = autoDistance(10)
-            layout.minimumInteritemSpacing = autoDistance(10)
-            let row: CGFloat = 3
-            let w = Int((ScreenWidth - Margin_Left * 2 - autoDistance(10) * (row - 1)) / row)
-            layout.itemSize = CGSize(width: CGFloat(w), height: autoDistance(200))
-            
-            return LDRecommendController(collectionViewLayout: layout)
-        }
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = autoDistance(10)
+        layout.minimumInteritemSpacing = autoDistance(10)
+        let row: CGFloat = 3
+        let w = Int((ScreenWidth - k_Margin_Fifteen * 2 - autoDistance(10) * (row - 1)) / row)
+        layout.itemSize = CGSize(width: CGFloat(w), height: autoDistance(200))
         
-        return UIViewController()
+        switch index {
+        case 0:
+            return LDRecommendController(collectionViewLayout: layout)
+        case 1:
+            return LDTeacherController(collectionViewLayout: layout)
+        default:
+            return UIViewController()
+        }
     }
     
     override func pageController(_ pageController: WMPageController, titleAt index: Int) -> String {

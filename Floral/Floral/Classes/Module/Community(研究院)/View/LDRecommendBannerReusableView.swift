@@ -38,7 +38,7 @@ class LDRecommendBannerReusableView: CollectionReusableView {
         }
         
         cycleView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(Margin_Left)
+            make.top.equalToSuperview().offset(k_Margin_Fifteen)
             make.left.right.equalToSuperview()
             make.bottom.equalTo(titleView.snp.top)
         }
